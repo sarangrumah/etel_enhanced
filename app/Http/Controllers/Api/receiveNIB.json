@@ -1,0 +1,1755 @@
+{
+    "dataNIB": {
+        "nib": "9120403222013",
+        "tgl_pengajuan_nib": "2019-02-21",
+        "tgl_terbit_nib": "2019-02-21",
+        "tgl_perubahan_nib": "2022-01-19",
+        "oss_id": "P-201912310410378612545",
+        "id_izin": "I-202206032133494917824",
+        "kd_izin": "059000000033",
+        "kd_daerah": "1503000000",
+        "kewenangan": "00",
+        "jenis_pelaku_usaha": "11",
+        "no_npp": null,
+        "no_va": "8988890001020084",
+        "no_wlkp": "-",
+        "flag_perusahaan": "N",
+        "flag_ekspor": "Y",
+        "flag_impor": "Y",
+        "jenis_api": "02",
+        "gabung_negara": "N ",
+        "negara_pma_dominan": "ID",
+        "total_pma": 0,
+        "nilai_pma_dominan": 0,
+        "nilai_pmdn": 2500000000,
+        "persen_pma": 0,
+        "persen_pmdn": 100,
+        "kd_kawasan": 0,
+        "jenis_kawasan": "-",
+        "versi_pia": "4.0.0",
+        "jangka_waktu": null,
+        "status_badan_hukum": "01",
+        "status_penanaman_modal": "02",
+        "npwp_perseroan": "031024755321000",
+        "nama_perseroan": "ANAKTUHA SAWIT MANDIRI",
+        "nama_singkatan": "-",
+        "jenis_perseroan": "01",
+        "status_perseroan": "N",
+        "alamat_perseroan": "Dusun VII Bumi Arum",
+        "rt_rw_perseroan": "-",
+        "kelurahan_perseroan": "Bumi Ratu",
+        "perseroan_daerah_id": "1802142006",
+        "kode_pos_perseroan": "34161",
+        "nomor_telpon_perseroan": "0721259996",
+        "email_perusahaan": "adm_sjai@yahoo.co.id",
+        "dalam_bentuk_uang": 2500000000,
+        "dalam_bentuk_lain": "-",
+        "total_modal_dasar": 10000000000,
+        "total_modal_ditempatkan": 0,
+        "pemegang_saham": [
+            {
+                "jenis_pemegang_saham": "01",
+                "flag_asing": "N",
+                "total_modal_pemegang": 1652500000,
+                "jabatan_pemegang_saham": "KOMISARIS UTAMA",
+                "nama_pemegang_saham": "SUTOMO",
+                "jns_identitas_pemegang_saham": "01",
+                "no_identitas_pemegang_saham": "1871090506550004",
+                "valid_identitas_pemegang_saham": null,
+                "negara_asal_pemegang_saham": "-",
+                "pengendali_pemegang_saham": "-",
+                "npwp_pemegang_saham": "060621679321000",
+                "alamat_pemegang_saham": "JL. SUTAN SYAHRIR NO. 2",
+                "fax_pemegang_saham": "-",
+                "email_pemegang_saham": "sutomo_bong@yahoo.com",
+                "flag_pajak_pemegang_saham": "00",
+                "ket_pajak_pemegang_saham": "VALID"
+            },
+            {
+                "jenis_pemegang_saham": "01",
+                "flag_asing": "N",
+                "total_modal_pemegang": 797500000,
+                "jabatan_pemegang_saham": "KOMISARIS",
+                "nama_pemegang_saham": "DRS. ANDHI FAUJANI, SH, MH",
+                "jns_identitas_pemegang_saham": "01",
+                "no_identitas_pemegang_saham": "1871091611590003",
+                "valid_identitas_pemegang_saham": null,
+                "negara_asal_pemegang_saham": "-",
+                "pengendali_pemegang_saham": "-",
+                "npwp_pemegang_saham": "063310122321000",
+                "alamat_pemegang_saham": "JL. P.E.M NUM KOMPLEK MANDALA 8B.B8",
+                "fax_pemegang_saham": "-",
+                "email_pemegang_saham": "a_faujani@hotmail.com",
+                "flag_pajak_pemegang_saham": "00",
+                "ket_pajak_pemegang_saham": "VALID"
+            },
+            {
+                "jenis_pemegang_saham": "01",
+                "flag_asing": "N",
+                "total_modal_pemegang": 50000000,
+                "jabatan_pemegang_saham": "-",
+                "nama_pemegang_saham": "KIKI INDRIYANTO",
+                "jns_identitas_pemegang_saham": "01",
+                "no_identitas_pemegang_saham": "1872041903690001",
+                "valid_identitas_pemegang_saham": null,
+                "negara_asal_pemegang_saham": "-",
+                "pengendali_pemegang_saham": "-",
+                "npwp_pemegang_saham": "084890425321000",
+                "alamat_pemegang_saham": "JL. SAMPING KORAMIL, RT 004/002",
+                "fax_pemegang_saham": "-",
+                "email_pemegang_saham": "kikiindriyanto@yahoo.com",
+                "flag_pajak_pemegang_saham": "00",
+                "ket_pajak_pemegang_saham": "VALID"
+            }
+        ],
+        "penanggung_jwb": [
+            {
+                "flag_asing": "N",
+                "jns_identitas_penanggung_jwb": "01",
+                "no_identitas_penanggung_jwb": "1871090506550004",
+                "nama_penanggung_jwb": "SUTOMO",
+                "jabatan_penanggung_jwb": "KOMISARIS UTAMA",
+                "kebangsaan_penanggung_jwb": "01",
+                "negara_asal_penanggung_jwb": "-",
+                "npwp_penanggung_jwb": "060621679321000",
+                "alamat_penanggung_jwb": "JL. SUTAN SYAHRIR NO. 2",
+                "jalan_penanggung_jwb": "-",
+                "blok_penanggung_jwb": "-",
+                "no_penanggung_jwb": "-",
+                "rt_rw_penanggung_jwb": "003/000",
+                "kelurahan_penanggung_jwb": "82821",
+                "daerah_id_penanggung_jwb": "18",
+                "kode_pos_penanggung_jwb": "-",
+                "no_telp_penanggung_jwb": "-",
+                "no_hp_penanggung_jwb": "0811724831",
+                "no_fax_penanggung_jwb": "-",
+                "email_penanggung_jwb": "sutomo_bong@yahoo.com",
+                "flag_pajak_penanggung_jwb": "00",
+                "ket_pajak_penanggung_jwb": "VALID"
+            },
+            {
+                "flag_asing": "N",
+                "jns_identitas_penanggung_jwb": "01",
+                "no_identitas_penanggung_jwb": "1871091611590003",
+                "nama_penanggung_jwb": "DRS. ANDHI FAUJANI, SH, MH",
+                "jabatan_penanggung_jwb": "KOMISARIS",
+                "kebangsaan_penanggung_jwb": "01",
+                "negara_asal_penanggung_jwb": "-",
+                "npwp_penanggung_jwb": "063310122321000",
+                "alamat_penanggung_jwb": "JL. P.E.M NUM KOMPLEK MANDALA 8B.B8",
+                "jalan_penanggung_jwb": "-",
+                "blok_penanggung_jwb": "-",
+                "no_penanggung_jwb": "-",
+                "rt_rw_penanggung_jwb": "012/000",
+                "kelurahan_penanggung_jwb": "55493",
+                "daerah_id_penanggung_jwb": "18",
+                "kode_pos_penanggung_jwb": "-",
+                "no_telp_penanggung_jwb": "-",
+                "no_hp_penanggung_jwb": "08117210728",
+                "no_fax_penanggung_jwb": "-",
+                "email_penanggung_jwb": "a_faujani@hotmail.com",
+                "flag_pajak_penanggung_jwb": "00",
+                "ket_pajak_penanggung_jwb": "VALID"
+            },
+            {
+                "flag_asing": "N",
+                "jns_identitas_penanggung_jwb": "01",
+                "no_identitas_penanggung_jwb": "1872041903690001",
+                "nama_penanggung_jwb": "KIKI INDRIYANTO",
+                "jabatan_penanggung_jwb": "-",
+                "kebangsaan_penanggung_jwb": "01",
+                "negara_asal_penanggung_jwb": "-",
+                "npwp_penanggung_jwb": "084890425321000",
+                "alamat_penanggung_jwb": "JL. SAMPING KORAMIL, RT 004/002",
+                "jalan_penanggung_jwb": "-",
+                "blok_penanggung_jwb": "-",
+                "no_penanggung_jwb": "-",
+                "rt_rw_penanggung_jwb": "004/002",
+                "kelurahan_penanggung_jwb": "82445",
+                "daerah_id_penanggung_jwb": "18",
+                "kode_pos_penanggung_jwb": "-",
+                "no_telp_penanggung_jwb": "-",
+                "no_hp_penanggung_jwb": "0811728731",
+                "no_fax_penanggung_jwb": "-",
+                "email_penanggung_jwb": "kikiindriyanto@yahoo.com",
+                "flag_pajak_penanggung_jwb": "00",
+                "ket_pajak_penanggung_jwb": "VALID"
+            },
+            {
+                "flag_asing": "N",
+                "jns_identitas_penanggung_jwb": "01",
+                "no_identitas_penanggung_jwb": "1872030507850003",
+                "nama_penanggung_jwb": "HENDRI",
+                "jabatan_penanggung_jwb": "DIREKTUR",
+                "kebangsaan_penanggung_jwb": "01",
+                "negara_asal_penanggung_jwb": "-",
+                "npwp_penanggung_jwb": "145234498321000",
+                "alamat_penanggung_jwb": "perumahan citra garden versailles park blok A3 No. 2",
+                "jalan_penanggung_jwb": "-",
+                "blok_penanggung_jwb": "-",
+                "no_penanggung_jwb": "-",
+                "rt_rw_penanggung_jwb": "000/000",
+                "kelurahan_penanggung_jwb": "69696",
+                "daerah_id_penanggung_jwb": "18",
+                "kode_pos_penanggung_jwb": "-",
+                "no_telp_penanggung_jwb": "-",
+                "no_hp_penanggung_jwb": "082181828100",
+                "no_fax_penanggung_jwb": "-",
+                "email_penanggung_jwb": "kiki_nerra0507@yahoo.com",
+                "flag_pajak_penanggung_jwb": "00",
+                "ket_pajak_penanggung_jwb": "VALID"
+            }
+        ],
+        "no_pengesahan": "AHU-0022529.AH.01.02.Tahun 2020",
+        "tgl_pengesahan": "2020-03-14",
+        "no_akta_lama": "03",
+        "tgl_akta_lama": "2019-01-08",
+        "no_pengesahan_lama": "AHU-0000857.AH.01.02.Tahun 2019",
+        "tgl_pengesahan_lama": "2019-01-09",
+        "legalitas": [
+            {
+                "jenis_legal": "02",
+                "no_legal": "12",
+                "tgl_legal": "2020-03-11",
+                "alamat_notaris": "KOTA BANDAR LAMPUNG",
+                "nama_notaris": "NEDI HERYANDI, SH ",
+                "telepon_notaris": "-"
+            }
+        ],
+        "data_rptka": {
+            "jenis_rptka": "-",
+            "no_rptka": "-",
+            "rptka_awal": "-",
+            "rptka_akhir": "-",
+            "rptka_gaji": 0,
+            "jumlah_tka_rptka": 0,
+            "jangka_penggunaan_waktu": null,
+            "jangka_waktu_permohonan_rptka": 0,
+            "rptka_jabatan": [
+                {
+                    "id_jabatan": 0,
+                    "jabatan": "-",
+                    "jumlah": 0,
+                    "tgl_mulai": null,
+                    "tgl_selesai": null,
+                    "keterangan": "-",
+                    "rptka_tki_pendamping": [
+                        {
+                            "id_jabatan": 0,
+                            "id_pendamping": 0,
+                            "nama": "-",
+                            "nik": "-",
+                            "jabatan": "-",
+                            "hp": "-",
+                            "email": "-",
+                            "foto": "-",
+                            "pendidikan_min": "-",
+                            "sertifikat": "-",
+                            "pengalaman_kerja": 0,
+                            "keterangan": "-"
+                        }
+                    ]
+                }
+            ],
+            "rptka_negara": [
+                {
+                    "id_negara": "-",
+                    "jumlah": 0
+                }
+            ],
+            "rptka_lokasi": [
+                {
+                    "lokasi_id": "-",
+                    "jumlah": 0
+                }
+            ]
+        },
+        "data_proyek": [
+            {
+                "id_proyek": "R-201912310410378652880",
+                "uraian_usaha": "Pabrik Pengolahan Minyak ",
+                "jumlah_tki_l": 96,
+                "jumlah_tki_p": 5,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "10431",
+                "sektor": "019",
+                "memiliki_menguasai": "Y",
+                "jenis_lokasi": "N",
+                "status_tanah": "02",
+                "luas_tanah": 22,
+                "satuan_luas_tanah": "02",
+                "pembelian_pematang_tanah": 7000000000,
+                "bangunan_gedung": 42000000000,
+                "mesin_peralatan": 860000000,
+                "mesin_peralatan_usd": 95000000000,
+                "investasi_lain": 18000000000,
+                "sub_jumlah": 162860000000,
+                "modal_kerja": 180000000000,
+                "jumlah_investasi": 342860000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "Y",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Industri Pengolahan Minyak Kelapa Sawit (CPO)",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "1872030507850003",
+                "nama_pj": "-",
+                "status_proyek": "02",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-201912310410378693156",
+                        "proyek_daerah_id": "1802142006",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "Dusun VII Bumi Arum",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202201191125129099059",
+                                "id_proyek_lokasi": "L-201912310410378693156",
+                                "posisi_lokasi": "01"
+                            },
+                            {
+                                "id_proyek_posisi": "LP-202201191125129137511",
+                                "id_proyek_lokasi": "L-201912310410378693156",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202201191124540008981",
+                        "id_proyek": "R-201912310410378652880",
+                        "kbli": "10431",
+                        "id_bidang_usaha": 470,
+                        "jenis_produksi": "Minyak Mentah Kelapa Sawit (CPO)",
+                        "kapasitas": 44000,
+                        "satuan": "3",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205130951341014854",
+                "uraian_usaha": "Industri Makaroni, Mie Da",
+                "jumlah_tki_l": 100,
+                "jumlah_tki_p": 50,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "10740",
+                "sektor": "019",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "01",
+                "luas_tanah": 10,
+                "satuan_luas_tanah": "02",
+                "pembelian_pematang_tanah": 1000000000,
+                "bangunan_gedung": 1000000000,
+                "mesin_peralatan": 2000000000,
+                "mesin_peralatan_usd": 3000000000,
+                "investasi_lain": 4000000000,
+                "sub_jumlah": 11000000000,
+                "modal_kerja": 4000000000,
+                "jumlah_investasi": 15000000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Industri Mie",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205130956318125238",
+                        "proyek_daerah_id": "3174091001",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": " Jl. Muara No.40B, RT.8/RW.2, Tj. Bar., Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12530",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "-",
+                                "id_proyek_lokasi": "-",
+                                "posisi_lokasi": "-"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205130958396586310",
+                        "id_proyek": "R-202205130951341014854",
+                        "kbli": "10740",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "Mie",
+                        "kapasitas": 1000000,
+                        "satuan": "22",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205131008279103314",
+                "uraian_usaha": "Industri Margarine",
+                "jumlah_tki_l": 200,
+                "jumlah_tki_p": 100,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "10412",
+                "sektor": "019",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "01",
+                "luas_tanah": 15,
+                "satuan_luas_tanah": "02",
+                "pembelian_pematang_tanah": 1000000000,
+                "bangunan_gedung": 2000000000,
+                "mesin_peralatan": 3000000000,
+                "mesin_peralatan_usd": 3000000000,
+                "investasi_lain": 3000000000,
+                "sub_jumlah": 12000000000,
+                "modal_kerja": 3000000000,
+                "jumlah_investasi": 15000000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Industri Margarine",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205131011466025634",
+                        "proyek_daerah_id": "3174091001",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": " Jl. Muara No.40B, RT.8/RW.2, Tj. Bar., Kec. Jagakarsa, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12530",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205131011473089216",
+                                "id_proyek_lokasi": "L-202205131011466025634",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205131012122503381",
+                        "id_proyek": "R-202205131008279103314",
+                        "kbli": "10412",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "-",
+                        "kapasitas": 1000000,
+                        "satuan": "3",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205131016158864339",
+                "uraian_usaha": "Pertambangan Minyak Bumi",
+                "jumlah_tki_l": 200,
+                "jumlah_tki_p": 50,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "06100",
+                "sektor": "020",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "01",
+                "luas_tanah": 15,
+                "satuan_luas_tanah": "02",
+                "pembelian_pematang_tanah": 1000000000,
+                "bangunan_gedung": 2000000000,
+                "mesin_peralatan": 3000000000,
+                "mesin_peralatan_usd": 3000000000,
+                "investasi_lain": 3000000000,
+                "sub_jumlah": 12000000000,
+                "modal_kerja": 3000000000,
+                "jumlah_investasi": 15000000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Pertambangan Minyak Bumi",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205131020006362726",
+                        "proyek_daerah_id": "3311121004",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "Jl. Slamet Riyadi No.301, Kenteng, Ngadirejo, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah 57163",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205131020009141156",
+                                "id_proyek_lokasi": "L-202205131020006362726",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205131020584077836",
+                        "id_proyek": "R-202205131016158864339",
+                        "kbli": "06100",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "Pertambangan Minyak",
+                        "kapasitas": 1000000,
+                        "satuan": "57",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205170958169202239",
+                "uraian_usaha": "Industri Minyak Dari Jagu",
+                "jumlah_tki_l": 150,
+                "jumlah_tki_p": 50,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "10636",
+                "sektor": "019",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "01",
+                "luas_tanah": 10,
+                "satuan_luas_tanah": "02",
+                "pembelian_pematang_tanah": 1000000000,
+                "bangunan_gedung": 2000000000,
+                "mesin_peralatan": 2000000000,
+                "mesin_peralatan_usd": 3000000000,
+                "investasi_lain": 3500000000,
+                "sub_jumlah": 11500000000,
+                "modal_kerja": 3500000000,
+                "jumlah_investasi": 15000000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Industri Minyak Dari Jagung dan Beras",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205171001373513972",
+                        "proyek_daerah_id": "3327012001",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "AlamatJl.Jendral Sudirman no. 145 Pemalang - Jawa Tengah - Indonesia",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205171001375323677",
+                                "id_proyek_lokasi": "L-202205171001373513972",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205171003594212588",
+                        "id_proyek": "R-202205170958169202239",
+                        "kbli": "10636",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "Minyak",
+                        "kapasitas": 1000000,
+                        "satuan": "3",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205191503560253464",
+                "uraian_usaha": "Industri Pemanis dari Ber",
+                "jumlah_tki_l": 100,
+                "jumlah_tki_p": 100,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "10635",
+                "sektor": "019",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "01",
+                "luas_tanah": 10,
+                "satuan_luas_tanah": "02",
+                "pembelian_pematang_tanah": 1000000000,
+                "bangunan_gedung": 2000000000,
+                "mesin_peralatan": 3000000000,
+                "mesin_peralatan_usd": 3000000000,
+                "investasi_lain": 4000000000,
+                "sub_jumlah": 13000000000,
+                "modal_kerja": 2000000000,
+                "jumlah_investasi": 15000000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Industri Pemanis",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205191526332212313",
+                        "proyek_daerah_id": "3173071001",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "jalan medan merdeka barat no.9 jakarta pusat 10110",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205191526334107182",
+                                "id_proyek_lokasi": "L-202205191526332212313",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205191526543774637",
+                        "id_proyek": "R-202205191503560253464",
+                        "kbli": "10635",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "-",
+                        "kapasitas": 1000000,
+                        "satuan": "3",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205200849498958027",
+                "uraian_usaha": "Pertambangan Minyak Bumi",
+                "jumlah_tki_l": 210,
+                "jumlah_tki_p": 0,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "06100",
+                "sektor": "020",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "03",
+                "luas_tanah": 23,
+                "satuan_luas_tanah": "02",
+                "pembelian_pematang_tanah": 1000000000,
+                "bangunan_gedung": 3200000000,
+                "mesin_peralatan": 4300000000,
+                "mesin_peralatan_usd": 4300000000,
+                "investasi_lain": 0,
+                "sub_jumlah": 12800000000,
+                "modal_kerja": 2300000000,
+                "jumlah_investasi": 15100000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Pertambangan Minyak Bumi",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205200852345673658",
+                        "proyek_daerah_id": "3305022002",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "Jalan Maharaja Utama no 23",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205200852347116193",
+                                "id_proyek_lokasi": "L-202205200852345673658",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205200853106899947",
+                        "id_proyek": "R-202205200849498958027",
+                        "kbli": "06100",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "Minyak Bumi",
+                        "kapasitas": 3000000000,
+                        "satuan": "57",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205200953091983247",
+                "uraian_usaha": "Industri Minyak Goreng Ke",
+                "jumlah_tki_l": 100,
+                "jumlah_tki_p": 50,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "10423",
+                "sektor": "019",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "01",
+                "luas_tanah": 10,
+                "satuan_luas_tanah": "02",
+                "pembelian_pematang_tanah": 1000000000,
+                "bangunan_gedung": 2000000000,
+                "mesin_peralatan": 3000000000,
+                "mesin_peralatan_usd": 3000000000,
+                "investasi_lain": 3000000000,
+                "sub_jumlah": 12000000000,
+                "modal_kerja": 3000000000,
+                "jumlah_investasi": 15000000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Industri Minyak Kelapa Goreng - Sragen",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205200958335534728",
+                        "proyek_daerah_id": "3314042003",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "Jalan Raya Grompol Batu Jamus No.Km.10 RT.25, Ringin Anom, Karang Pelem, Kec. Kedawung, Kabupaten Sragen, Jawa Tengah 57292",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205200958348175549",
+                                "id_proyek_lokasi": "L-202205200958335534728",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205201000025059857",
+                        "id_proyek": "R-202205200953091983247",
+                        "kbli": "10423",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "Minyak goreng",
+                        "kapasitas": 10000000,
+                        "satuan": "37",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205201008226563876",
+                "uraian_usaha": "Industri Pengolahan Susu ",
+                "jumlah_tki_l": 100,
+                "jumlah_tki_p": 50,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "10510",
+                "sektor": "019",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "01",
+                "luas_tanah": 10,
+                "satuan_luas_tanah": "02",
+                "pembelian_pematang_tanah": 1000000000,
+                "bangunan_gedung": 2000000000,
+                "mesin_peralatan": 3000000000,
+                "mesin_peralatan_usd": 3000000000,
+                "investasi_lain": 3000000000,
+                "sub_jumlah": 12000000000,
+                "modal_kerja": 3000000000,
+                "jumlah_investasi": 15000000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Industri Pengolahan Susu Sapi",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205201011016256268",
+                        "proyek_daerah_id": "3309072005",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "Jalan Raya Randusari Nepen Dukuh Dampit, RT.001/RW.003, Dusun I, Sudimoro, Kec. Teras, Kabupaten Boyolali, Jawa Tengah 57372",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205201011017678677",
+                                "id_proyek_lokasi": "L-202205201011016256268",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205201011373339909",
+                        "id_proyek": "R-202205201008226563876",
+                        "kbli": "10510",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "Susu Sapi",
+                        "kapasitas": 10000000,
+                        "satuan": "37",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205201124521886887",
+                "uraian_usaha": "Industri Pengolahan Es Kr",
+                "jumlah_tki_l": 100,
+                "jumlah_tki_p": 50,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "10531",
+                "sektor": "019",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "01",
+                "luas_tanah": 10,
+                "satuan_luas_tanah": "02",
+                "pembelian_pematang_tanah": 1000000000,
+                "bangunan_gedung": 2000000000,
+                "mesin_peralatan": 3000000000,
+                "mesin_peralatan_usd": 3000000000,
+                "investasi_lain": 3000000000,
+                "sub_jumlah": 12000000000,
+                "modal_kerja": 3000000000,
+                "jumlah_investasi": 15000000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Industri Pengolahan Es Krim",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205201129191209133",
+                        "proyek_daerah_id": "3308101009",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "Jalan Pandansari Timur, RT. 01 RW. 08, Sumberrejo, Mertoyudan, Glagak, Sumberrejo, Kec. Mertoyudan, Kabupaten Magelang, Jawa Tengah 56172",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205201129192255913",
+                                "id_proyek_lokasi": "L-202205201129191209133",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205201129440817410",
+                        "id_proyek": "R-202205201124521886887",
+                        "kbli": "10531",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "-",
+                        "kapasitas": 1000000,
+                        "satuan": "22",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205230843006602101",
+                "uraian_usaha": "Industri Makanan Sereal",
+                "jumlah_tki_l": 100,
+                "jumlah_tki_p": 50,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "10615",
+                "sektor": "019",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "01",
+                "luas_tanah": 10,
+                "satuan_luas_tanah": "02",
+                "pembelian_pematang_tanah": 1000000000,
+                "bangunan_gedung": 2000000000,
+                "mesin_peralatan": 3000000000,
+                "mesin_peralatan_usd": 3000000000,
+                "investasi_lain": 3000000000,
+                "sub_jumlah": 12000000000,
+                "modal_kerja": 3000000000,
+                "jumlah_investasi": 15000000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Industri Sereal",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205230850295991359",
+                        "proyek_daerah_id": "3374151004",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "Jl. Gatot Subroto No.1A, Purwoyoso, Ngaliyan, Semarang City, Central Java 50184",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205230850296757016",
+                                "id_proyek_lokasi": "L-202205230850295991359",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205230850596616915",
+                        "id_proyek": "R-202205230843006602101",
+                        "kbli": "10615",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "-",
+                        "kapasitas": 1000000,
+                        "satuan": "20",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205231024083214950",
+                "uraian_usaha": "Konstruksi Gedung Perbela",
+                "jumlah_tki_l": 100,
+                "jumlah_tki_p": 20,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "41014",
+                "sektor": "033",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "01",
+                "luas_tanah": 10,
+                "satuan_luas_tanah": "02",
+                "pembelian_pematang_tanah": 1000000000,
+                "bangunan_gedung": 2000000000,
+                "mesin_peralatan": 3000000000,
+                "mesin_peralatan_usd": 3000000000,
+                "investasi_lain": 3000000000,
+                "sub_jumlah": 12000000000,
+                "modal_kerja": 3000000000,
+                "jumlah_investasi": 15000000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Pembangunan Pasar Rakyat Modern Bauntung Kota Banjarbaru",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205231027175067853",
+                        "proyek_daerah_id": "6372051002",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "Kelurahan Loktabat Selatan, Kecamatan Banjar Baru Selatan, Kota Banjar Baru - Kalimantan Selatan",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205231027176408090",
+                                "id_proyek_lokasi": "L-202205231027175067853",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205231029397537064",
+                        "id_proyek": "R-202205231024083214950",
+                        "kbli": "41014",
+                        "id_bidang_usaha": 1157,
+                        "jenis_produksi": "Bangunan",
+                        "kapasitas": 100000000,
+                        "satuan": "7",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205241156242627787",
+                "uraian_usaha": "Industri Bata, Mortar, Se",
+                "jumlah_tki_l": 10,
+                "jumlah_tki_p": 30,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "23911",
+                "sektor": "019",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "02",
+                "luas_tanah": 540,
+                "satuan_luas_tanah": "01",
+                "pembelian_pematang_tanah": 50000000,
+                "bangunan_gedung": 23000000,
+                "mesin_peralatan": 40000000,
+                "mesin_peralatan_usd": 30000000,
+                "investasi_lain": 0,
+                "sub_jumlah": 143000000,
+                "modal_kerja": 12000000,
+                "jumlah_investasi": 155000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Industri Bata, Mortar, Semen, dan Sejenisnya yang Tahan Api",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205241632271727163",
+                        "proyek_daerah_id": "3305022003",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "Jl. Timur no 09",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205241632274641476",
+                                "id_proyek_lokasi": "L-202205241632271727163",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205241633132546644",
+                        "id_proyek": "R-202205241156242627787",
+                        "kbli": "23911",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "Bata",
+                        "kapasitas": 10000000,
+                        "satuan": "22",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205271003467233106",
+                "uraian_usaha": "Industri Bata, Mortar, Se",
+                "jumlah_tki_l": 21,
+                "jumlah_tki_p": 0,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "23911",
+                "sektor": "019",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "03",
+                "luas_tanah": 234,
+                "satuan_luas_tanah": "01",
+                "pembelian_pematang_tanah": 100000000,
+                "bangunan_gedung": 200000000,
+                "mesin_peralatan": 0,
+                "mesin_peralatan_usd": 210000000,
+                "investasi_lain": 320000000,
+                "sub_jumlah": 830000000,
+                "modal_kerja": 230000000,
+                "jumlah_investasi": 1060000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Industri Bata, Mortar, Semen, dan Sejenisnya yang Tahan Api",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205271005535673197",
+                        "proyek_daerah_id": "3305012001",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "Jl. Haji Senin no 32",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205271005537237001",
+                                "id_proyek_lokasi": "L-202205271005535673197",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205271009319375255",
+                        "id_proyek": "R-202205271003467233106",
+                        "kbli": "23911",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "Bata, Mortar, Semen, dan Sejenisnya yang Tahan Api",
+                        "kapasitas": 10000000000,
+                        "satuan": "22",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205301612448139495",
+                "uraian_usaha": "Industri Lampu LED",
+                "jumlah_tki_l": 20,
+                "jumlah_tki_p": 0,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "27404",
+                "sektor": "019",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "01",
+                "luas_tanah": 1600,
+                "satuan_luas_tanah": "01",
+                "pembelian_pematang_tanah": 1000000000,
+                "bangunan_gedung": 2000000000,
+                "mesin_peralatan": 0,
+                "mesin_peralatan_usd": 0,
+                "investasi_lain": 0,
+                "sub_jumlah": 3000000000,
+                "modal_kerja": 3000000000,
+                "jumlah_investasi": 6000000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "lampu led",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205301616310915592",
+                        "proyek_daerah_id": "3205042004",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "test",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205301616311262613",
+                                "id_proyek_lokasi": "L-202205301616310915592",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205301616546366123",
+                        "id_proyek": "R-202205301612448139495",
+                        "kbli": "27404",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "adasdsad",
+                        "kapasitas": 100000000,
+                        "satuan": "20",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202205301626450276767",
+                "uraian_usaha": "Industri Lampu LED",
+                "jumlah_tki_l": 23,
+                "jumlah_tki_p": 0,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "27404",
+                "sektor": "019",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "01",
+                "luas_tanah": 12312,
+                "satuan_luas_tanah": "01",
+                "pembelian_pematang_tanah": 2000000000,
+                "bangunan_gedung": 2000000000,
+                "mesin_peralatan": 0,
+                "mesin_peralatan_usd": 0,
+                "investasi_lain": 2000000000,
+                "sub_jumlah": 6000000000,
+                "modal_kerja": 1000000000,
+                "jumlah_investasi": 7000000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "asd",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202205301628123991900",
+                        "proyek_daerah_id": "1406022007",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "ad",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202205301628124764151",
+                                "id_proyek_lokasi": "L-202205301628123991900",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202205301628377294887",
+                        "id_proyek": "R-202205301626450276767",
+                        "kbli": "27404",
+                        "id_bidang_usaha": "-",
+                        "jenis_produksi": "123asdasd",
+                        "kapasitas": 12300,
+                        "satuan": "20",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202206032130446009284",
+                "uraian_usaha": "Jasa Konten SMS Premium",
+                "jumlah_tki_l": 10,
+                "jumlah_tki_p": 0,
+                "jumlah_tka_l": 0,
+                "jumlah_tka_p": 0,
+                "kbli": "61912",
+                "sektor": "059",
+                "memiliki_menguasai": "N",
+                "jenis_lokasi": "N",
+                "status_tanah": "03",
+                "luas_tanah": 123,
+                "satuan_luas_tanah": "01",
+                "pembelian_pematang_tanah": 2000000000,
+                "bangunan_gedung": 3000000000,
+                "mesin_peralatan": 0,
+                "mesin_peralatan_usd": 0,
+                "investasi_lain": 10000000000,
+                "sub_jumlah": 15000000000,
+                "modal_kerja": 3000000000,
+                "jumlah_investasi": 18000000000,
+                "tanggal_kurs": null,
+                "nilai_kurs": 0,
+                "kd_kawasan": 0,
+                "jawab_lokasi_b": "N",
+                "jawab_lokasi_c": "N",
+                "jawab_lokasi_d": "N",
+                "jawab_lokasi_e": "N",
+                "jawab_lokasi_f": "N",
+                "jawab_lokasi_g": "N",
+                "flag_perluasan": "N",
+                "flag_cabang": "N",
+                "npwp_cabang": "-",
+                "nama_cabang": "Test",
+                "jenis_identitas_pj": "-",
+                "no_identitas_pj": "-",
+                "nama_pj": "-",
+                "status_proyek": "01",
+                "data_lokasi_proyek": [
+                    {
+                        "id_proyek_lokasi": "L-202206032133212778707",
+                        "proyek_daerah_id": "1503042002",
+                        "kd_kawasan": "-",
+                        "alamat_usaha": "test",
+                        "id_kegiatan": "-",
+                        "response_kegiatan": "-",
+                        "jenis_kawasan": "-",
+                        "jenis_lokasi": "-",
+                        "status_lokasi": "01",
+                        "data_lokasi_proyek": [
+                            {
+                                "serial": 1,
+                                "lat_lng": "-"
+                            }
+                        ],
+                        "data_posisi_proyek": [
+                            {
+                                "id_proyek_posisi": "LP-202206032133213947663",
+                                "id_proyek_lokasi": "L-202206032133212778707",
+                                "posisi_lokasi": "01"
+                            }
+                        ]
+                    }
+                ],
+                "data_proyek_produk": [
+                    {
+                        "id_produk": "O-202206032133455052910",
+                        "id_proyek": "R-202206032130446009284",
+                        "kbli": "61912",
+                        "id_bidang_usaha": 1252,
+                        "jenis_produksi": "test",
+                        "kapasitas": 12312312311,
+                        "satuan": "7",
+                        "merk_dagang": "-",
+                        "pemegang_haki": "-",
+                        "pemegang_paten": "-",
+                        "pi_nomor": "-",
+                        "pi_tanggal": null,
+                        "pi_npwp": "-"
+                    }
+                ]
+            }
+        ],
+        "data_dni": [
+            {
+                "kd_dni": 0
+            }
+        ],
+        "data_checklist": [
+            {
+                "id_proyek": "R-202206032130446009284",
+                "id_izin": "I-202206032136386511999",
+                "kd_izin": "059000000010",
+                "kd_daerah": "1503000000",
+                "nama_izin": "Tanda Daftar Penyelenggara Sistem Elektronik (TD PSE) Domestik",
+                "instansi": "Kementerian Komunikasi dan Informatika",
+                "id_bidang_spesifik": 8082,
+                "bidang_spesifik": "-",
+                "id_kewenangan": 0,
+                "parameter_kewenangan": "-",
+                "kewenangan": "00",
+                "flag_checklist": "Y",
+                "data_persyaratan": [
+                    {
+                        "id_syarat": "-",
+                        "no_dokumen": "-",
+                        "tgl_dokumen": "-",
+                        "file_dokumen": "-",
+                        "keterangan": "-"
+                    }
+                ]
+            },
+            {
+                "id_proyek": "R-202206032130446009284",
+                "id_izin": "I-202206032133494917824",
+                "kd_izin": "059000000033",
+                "kd_daerah": "1503000000",
+                "nama_izin": "Sertifikat Penyelenggaraan Jasa Konten SMS Premium",
+                "instansi": "Kementerian Komunikasi dan Informatika",
+                "id_bidang_spesifik": 0,
+                "bidang_spesifik": "-",
+                "id_kewenangan": 0,
+                "parameter_kewenangan": "-",
+                "kewenangan": "00",
+                "flag_checklist": "Y",
+                "data_persyaratan": [
+                    {
+                        "id_syarat": "-",
+                        "no_dokumen": "-",
+                        "tgl_dokumen": "-",
+                        "file_dokumen": "-",
+                        "keterangan": "-"
+                    }
+                ]
+            }
+        ],
+        "jenis_id_user_proses": "01",
+        "no_id_user_proses": "1872030507850003",
+        "nama_user_proses": "HENDRI",
+        "email_user_proses": "sawitmandirianaktuha@gmail.com",
+        "hp_user_proses": "08118887763",
+        "alamat_user_proses": "JL SULAWESI NO 12 A",
+        "jns_kelamin_user_proses": "L",
+        "tempat_lahir_user_proses": "SUNGAI LIAT",
+        "tgl_lahir_user_proses": "1985-07-05",
+        "daerah_id_user_proses": "1872031004",
+        "rt_rw_user_proses": "039/008",
+        "agama_user_proses": "KRISTEN",
+        "status_perkawinan_user_proses": "BELUM KAWIN",
+        "pekerjaan_user_proses": "-",
+        "status_nib": "01",
+        "tipe_dokumen": 9
+    }
+}

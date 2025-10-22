@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Mukta Vaani';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/muktavaani/v13/3JnkSD_-ynaxmxnEfVHPIGWpVPBE8Os.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Mukta Vaani';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/muktavaani/v13/3Jn5SD_-ynaxmxnEfVHPIG0CduA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Mukta Vaani';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/muktavaani/v13/3JnkSD_-ynaxmxnEfVHPIGXxVfBE8Os.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Mukta Vaani';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/muktavaani/v13/3JnkSD_-ynaxmxnEfVHPIGXdUvBE8Os.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Mukta Vaani';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/muktavaani/v13/3JnkSD_-ynaxmxnEfVHPIGW5U_BE8Os.ttf) format('truetype');
+}

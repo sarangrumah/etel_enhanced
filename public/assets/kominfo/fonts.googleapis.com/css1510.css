@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'Mukta Vaani';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/muktavaani/v13/3JnkSD_-ynaxmxnEfVHPIGWpVPBE8Os.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Mukta Vaani';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/muktavaani/v13/3Jn5SD_-ynaxmxnEfVHPIG0CduA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Mukta Vaani';
+  font-style: normal;
+  font-weight: 500;
+  src: url(https://fonts.gstatic.com/s/muktavaani/v13/3JnkSD_-ynaxmxnEfVHPIGXxVfBE8Os.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Mukta Vaani';
+  font-style: normal;
+  font-weight: 600;
+  src: url(https://fonts.gstatic.com/s/muktavaani/v13/3JnkSD_-ynaxmxnEfVHPIGXdUvBE8Os.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Mukta Vaani';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/muktavaani/v13/3JnkSD_-ynaxmxnEfVHPIGW5U_BE8Os.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v34/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4gaVc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v34/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v34/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v34/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4gaVc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v34/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4gaVc.ttf) format('truetype');
+}
