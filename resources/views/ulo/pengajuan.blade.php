@@ -92,7 +92,7 @@
 								<label class="col-lg-3 col-form-label">Surat Permohonan Uji Laik Operasi <span
 										class="text-danger">*</span></label>
 								<div class="col-lg-3">
-									<input type="file" name="sp_ulo" id="sp_ulo" accept="application/pdf">
+									<input type="file" name="sp_ulo" id="sp_ulo" accept="application/pdf" onchange="validatePdf(this)">
 									<span for="" class="text-danger mr-2">*Wajib Diisi Format PDF</span>
 									<span for="" class="text-danger">*Maksimum File : 5Mb</span>
 									{{-- <button style="display: inline-block" type="button" class="btn btn-warning btn-sm"
@@ -282,5 +282,26 @@
 		// 		return [disabledDates1.indexOf(string) == -1]
 		// 	}
 		// });
+	</script>
+	<script>
+		function validatePdf(fileInput) {
+			const file = fileInput.files[0];
+			const allowedMimeType = 'application/pdf';
+			const maxFileSize = 5 * 1024 * 1024; // 5MB
+
+			if (file) {
+				if (file.type !== allowedMimeType) {
+					alert('Hanya file dengan format PDF yang diizinkan.');
+					fileInput.value = ''; // Clear the input
+					return;
+				}
+
+				if (file.size > maxFileSize) {
+					alert('Ukuran file tidak boleh melebihi 5MB.');
+					fileInput.value = ''; // Clear the input
+					return;
+				}
+			}
+		}
 	</script>
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Rules\ValidPdf;
 use Session;
 use App\Models\Nib;
 use App\Models\RegisterIP;
@@ -38,13 +39,18 @@ class InstansiPemerintah extends Controller
     public function registerptPost(Request $req)
     {
         // dd($req);
+        $req->validate([
+            'vDokumenNib' => ['nullable', 'mimes:pdf', 'max:5120', new ValidPdf],
+            'vUploadNpwp' => ['required', 'mimes:pdf', 'max:5120', new ValidPdf],
+            'vUngahSk' => ['required', 'mimes:pdf', 'max:5120', new ValidPdf],
+        ]);
         $prov =  DB::table('tb_mst_provinsi')->select('id', 'name')->where(['id' => $req->vProvinsi])->first();
         $kab =  DB::table('tb_mst_kabupaten')->select('id', 'name')->where(['id' => $req->vKotaKabupaten])->first();
         $kec =  DB::table('tb_mst_kecamatan')->select('id', 'name')->where(['id' => $req->vKecamatan])->first();
         $kel =  DB::table('tb_mst_kelurahan')->select('id', 'name')->where(['id' => $req->vKelurahan])->first();
         $alamat = $req->vAlamat . ", Kel." . $kel->name . ", Kec." . $kec->name . ", Kab/Kota." . $kab->name . ", Prov." . $prov->name . " " . $req->vKodePos;
         // dd($req->all());
-        
+
         $updateNib = Nib::where('id', $req->vKey)
             ->update([
                 // 'status_badan_hukum' => '02',
@@ -69,7 +75,7 @@ class InstansiPemerintah extends Controller
                 'status_evaluasi' => 0
                 ]);
             }
-        
+
 
         if ($file = $req->file('vDokumenNib')) {
             $filename = "NIB-" . time() . '.' . $file->extension();
@@ -155,6 +161,11 @@ class InstansiPemerintah extends Controller
         // dd(Auth::user()->nib[0]->nib );
         // dd(Auth::user()->nib[0]->nib );
 
+        $req->validate([
+            'vSuratTugas' => ['required', 'mimes:pdf', 'max:5120', new ValidPdf],
+            'vBerkasKtp' => ['required', 'mimes:pdf', 'max:5120', new ValidPdf],
+            'vKartuPegawai' => ['required', 'mimes:pdf', 'max:5120', new ValidPdf],
+        ]);
         $prov =  DB::table('tb_mst_provinsi')->select('id', 'name')->where(['id' => $req->vProvinsi])->first();
         $kab =  DB::table('tb_mst_kabupaten')->select('id', 'name')->where(['id' => $req->vKotaKabupaten])->first();
         $kec =  DB::table('tb_mst_kecamatan')->select('id', 'name')->where(['id' => $req->vKecamatan])->first();
@@ -285,7 +296,7 @@ class InstansiPemerintah extends Controller
                     'kode_pos' => $req->vKodePos,
                     'status_evaluasi' => 0
                 ]);
-                
+
                 $checkNib = Nib::where('nib','=', Auth::user()->nib[0]->nib)
                     ->where('status_nib','=','07')->first();
                     if (isset($checkNIB)) {
@@ -383,7 +394,7 @@ class InstansiPemerintah extends Controller
                     $count_email_req = DB::table('tb_trx_req_ip')->where('oss_id','=',Auth::user()->oss_id)
                     ->where('type','=','Perubahan Email Akun')->where('status','=','0')->count();
                     if($count_email_req>0){
-                        
+
                         return redirect('/')->with('message', 'Mohon maaf Permohonan Anda tidak bisa diajukan, mohon menunggu proses verifikasi atas permohonan sebelumnya.');
                     }
                     // dd($req['email-update'], $path, Auth::user()->oss_id, $req->all());
@@ -404,7 +415,7 @@ class InstansiPemerintah extends Controller
                     $count_email_req = DB::table('tb_trx_req_ip')->where('oss_id','=',Auth::user()->oss_id)
                     ->where('type','=','Perubahan NIB Akun')->where('status','=','0')->count();
                     if($count_email_req>0){
-                        
+
                         return redirect('/')->with('message', 'Mohon maaf Permohonan Anda tidak bisa diajukan, mohon menunggu proses verifikasi atas permohonan sebelumnya.');
                     }
                     $insertcatatan = reqPelakuUsaha::create([

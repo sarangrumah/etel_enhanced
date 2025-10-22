@@ -26,15 +26,15 @@
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label">Surat Tugas Pelaksanaan ULO Mandiri<span class="text-danger">*</span> <span class="text-danger" data-toggle="tooltip" data-placement="top" title="Pastikan upload dokumen sebelum tanggal pelaksanaan ulo"><i class="icon-question3"></i></span></label>
                                     <div class="col-lg-3">
-                                        <input type="file" name="stp_ulo_mandiri" id=""  accept="application/pdf">
+                                        <input type="file" name="stp_ulo_mandiri" id=""  accept="application/pdf" onchange="validatePdf(this)">
                                         <input type="hidden" name="status" value="20">
                                         <span class="text-danger">Maksimum File: 5Mb</span>
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label">Hasil Pengujian ULO Mandiri<span class="text-danger">*</span> <span class="text-danger" data-toggle="tooltip" data-placement="top" title="Pastikan upload dokumen sebelum tanggal pelaksanaan ulo"><i class="icon-question3"></i></span></label>
-                                    <div class="col-lg-3"> 
-                                        <input type="file" name="hp_ulo_mandiri" id=""  accept="application/pdf">
+                                    <div class="col-lg-3">
+                                        <input type="file" name="hp_ulo_mandiri" id=""  accept="application/pdf" onchange="validatePdf(this)">
                                         <span class="text-danger">Maksimum File: 5Mb</span>
                                     </div>
                                 </div>
@@ -48,7 +48,7 @@
        <div class="text-right">
             <a href="{{ URL::previous() }}" class="btn btn-indigo"><i class="icon-backward2 ml-2"></i> Kembali </a>
             <button type="submit" class="btn btn-secondary " onclick="return false;" data-toggle="modal" data-target="#submitModal">
-                Kirim Permohonan 
+                Kirim Permohonan
             <i class="icon-paperplane ml-2"></i></button>
         </div>
     </form>
@@ -86,9 +86,29 @@
 
     function submitulo(){
         $('.notif-button').attr("hidden",true);
-		$('.loading').attr("hidden",false);	
+		$('.loading').attr("hidden",false);
         $('#form-mandiri').submit();
     }
 </script>
-@endsection
+<script>
+    function validatePdf(fileInput) {
+        const file = fileInput.files[0];
+        const allowedMimeType = 'application/pdf';
+        const maxFileSize = 5 * 1024 * 1024; // 5MB
 
+        if (file) {
+            if (file.type !== allowedMimeType) {
+                alert('Hanya file dengan format PDF yang diizinkan.');
+                fileInput.value = ''; // Clear the input
+                return;
+            }
+
+            if (file.size > maxFileSize) {
+                alert('Ukuran file tidak boleh melebihi 5MB.');
+                fileInput.value = ''; // Clear the input
+                return;
+            }
+        }
+    }
+</script>
+@endsection
