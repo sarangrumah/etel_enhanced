@@ -6,16 +6,6 @@
             <div class="form-group">
                 <div class="col-lg-12">
                     <div class="row">
-                        {{-- <div class="col-6">
-                            <p class="font-weight-semibold">Nomor Induk Berusaha (NIB) / Nama Instansi<span
-                                    class="text-danger">*</span>
-                            </p>
-                            <input type="text" name="vNib" id="vNib" value="{{ $oss->nib }}" readonly
-                                class="form-control">
-                            <span class="form-text text-muted">NIB adalah Nomor Induk berusaha yang diperolah dari
-                                oss.go.id. Untuk Non Penyelenggara Telekomunikasi tidak perlu melakukan pengisian NIB
-                                tetapi diisi dengan Nama Instansi..</span>
-                        </div> --}}
                         <div class="col-6">
                             @if (Auth::user()->jenis_pu == 'TKI')
                                 <p class="font-weight-semibold">ID K/L/D/I<span class="text-danger">*</span>
@@ -44,10 +34,6 @@
                                 @if (isset($oss->nib))
                                     <div class="input-group">
                                         <input type="text" name="vNib" id="vNib" value="{{ $oss->nib }}" readonly class="form-control">
-                                        {{-- <span class="input-group-append">
-                                            <a target="_blank" href="{{ asset($oss->path_berkas_nib) }}"
-                                                class="btn btn-teal" type="button">Lihat Dokumen</a>
-                                        </span> --}}
                                     </div>
                                 @else
                                     <input type="text" name="vNib" id="vNib" class="form-control"
@@ -65,15 +51,7 @@
                                 <small for="" class="text-danger">*Maksimum File : 5Mb</small>
                             </div>
                         @endif
-                        {{-- <div class="col-12">
-                            <span class="form-text text-muted">NIB adalah Nomor Induk berusaha yang diperolah dari
-                                oss.go.id. Untuk Non Penyelenggara Telekomunikasi dan Instansi Pemerintah tidak perlu
-                                melakukan pengisian NIB
-                                tetapi diisi dengan Nama Instansi</span>
-                        </div> --}}
-
                     </div>
-
                 </div>
             </div>
 
@@ -82,14 +60,13 @@
                     <label class="col-lg-8 col-form-label font-weight-semibold" id="lbl_kdakses">KBLI yang dimiliki</label>
                     <div class="col-lg-6" id="PilihKBLI">
                         <table class="table table-custom table-sm">
-
                             <tbody id="kbli-lists">
                                 <tr class="kbli-item">
                                     <td style="width: 60%;">
                                         <select class="form-control pilih-kbli">
                                             @foreach ($kbli as $kb)
                                                 <option value="{{ $kb->kblikode }}">
-                                                	{{ $kb->kblikode . ' - ', $kb->kbliname }}
+                                                    {{ $kb->kblikode . ' - ', $kb->kbliname }}
                                                 </option>
                                             @endforeach
                                         </select>
@@ -101,7 +78,6 @@
                             </tbody>
                         </table>
                     </div>
-
                 </div>
             </div>
 
@@ -127,7 +103,6 @@
                         <span class="form-text text-muted">Pengisian Nama Badan Hukum non-Penyelenggara perlu menggunakan awalan seperti
                             (PT. / CV. / dan sejenisnya.) .</span>
                     @endif
-
                 </div>
             </div>
             <div class="form-group">
@@ -178,7 +153,6 @@
                             <select data-placeholder="Pilih Jenis Instansi" name="vJenisInstansi" id="vJenisInstansi"
                                 class="form-control form-control-select2" data-fouc required>
                                 <option></option>
-
                                 @if (Auth::user()->jenis_pu == 'TKI')
                                     @foreach ($instansi_nbh as $key => $vi)
                                         <option value="{{ $vi->oss_kode }}" {{ $oss->jenis_perseroan == $vi->oss_kode ? 'selected' : '' }}>
@@ -201,7 +175,6 @@
                             </select>
                         </div>
                     @endif
-
                 </div>
             </div>
 
@@ -212,7 +185,6 @@
                         Provinsi</span>
                     <input type="text" value="{{ isset($oss->alamat_perseroan_init) ? $oss->alamat_perseroan_init : '' }}"
                         name="vAlamat" id="vAlamat" class="form-control" required>
-
                 </div>
             </div>
             <div class="form-group">
@@ -230,7 +202,6 @@
                                     class="form-control form-control-select2" data-fouc required>
                                     <option></option>
                                     @foreach ($provinsi as $vp)
-                                        {{-- <option value="{{ $vp->id }}">{{ $vp->name }}</option> --}}
                                         <option value="{{ $vp->id }}">
                                             {{ $vp->name }}
                                         </option>
@@ -244,7 +215,6 @@
                                     class="form-control form-control-select2" data-fouc required>
                                     <option></option>
                                     @foreach ($provinsi as $vp)
-                                        {{-- <option value="{{ $vp->id }}">{{ $vp->name }}</option> --}}
                                         <option value="{{ $vp->id }}">
                                             {{ $vp->name }}
                                         </option>
@@ -252,7 +222,6 @@
                                 </select>
                             </div>
                         @endif
-
                     </div>
                 </div>
             </div>
@@ -287,9 +256,7 @@
                                 </div>
                             </div>
                         @endif
-
                     </div>
-
                 </div>
             </div>
 
@@ -360,7 +327,6 @@
                                 </div>
                             </div>
                         @endif
-
                     </div>
                 </div>
             </div>
@@ -368,7 +334,6 @@
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-4">
-
                             <p class="font-weight-semibold">Kode Pos<span class="text-danger">*</span></p>
                             <input type="text" name="vKodePos" id="vKodePos" class="form-control"
                                 value="{{ isset($oss->kode_pos_perseroan) ? $oss->kode_pos_perseroan : '' }}" required>
@@ -427,7 +392,6 @@
                                 <input type="text" name="vNpwp" id="vNpwp" class="form-control"
                                     value="{{ isset($oss->npwp_perseroan) ? $oss->npwp_perseroan : '' }}" required>
                             @endif
-
                         </div>
                         <div class="col-6">
                             @if (Auth::user()->jenis_pu == 'PTB' || Auth::user()->jenis_pu == 'TKB' || Auth::user()->jenis_pu == 'PTP')
@@ -457,9 +421,6 @@
                         <div class="col-6">
                             <p class="font-weight-semibold">Nomor Akta Terakhir Perusahaan / Dokumen SK Kemenkumham / Dasar Hukum
                                 Pembentukan Instansi Pemerintah<span class="text-danger">*</span></p>
-                            {{-- <input type="text" name="vAktaTerakhir" id="vAktaTerakhir" class="form-control"
-                                value="{{ isset($oss->no_pengesahan) ? $oss->no_pengesahan : '' }}"> --}}
-
                             @if (isset($oss->no_pengesahan))
                                 <div class="input-group">
                                     <input type="text" name="vAktaTerakhir" id="vAktaTerakhir"

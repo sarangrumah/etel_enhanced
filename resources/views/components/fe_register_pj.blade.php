@@ -1,27 +1,7 @@
 <div>
     <form action="{{ url('/ip/registerpj') }}" method="post" enctype="multipart/form-data">
         @csrf
-        {{-- <input type="hidden" name="vNib" id="vNib" value="{{ Auth::user()->nib[0]->nib }}"> --}}
         <fieldset>
-            {{-- <div class="form-group">
-                <div class="col-lg-12">
-                    <p class="font-weight-semibold">Kriteria Penanggung Jawab</p>
-                    <div class="custom-control custom-radio mb-2">
-                        <input type="radio" class="custom-control-input"
-                            value="Anda Seorang Direktur/Pimpinan Instansi/Badan Usaha" name="vJenisUser"
-                            id="cr_l_s_s">
-                        <label class="custom-control-label" for="cr_l_s_s">Anda Seorang Direktur/Pimpinan Instansi/Badan
-                            Usaha</label>
-                    </div>
-                    <div class="custom-control custom-radio mb-3">
-                        <input type="radio" class="custom-control-input"
-                            value="Anda bukan Seorang Direktur/Pimpinan Instansi/Badan Usaha" name="vJenisUser"
-                            id="cr_l_s_u">
-                        <label class="custom-control-label" for="cr_l_s_u">Anda bukan Seorang Direktur/Pimpinan
-                            Instansi/Badan Usaha</label>
-                    </div>
-                </div>
-            </div> --}}
             <div class="form-group">
                 <div class="col-lg-12">
                     <p class="font-weight-semibold">Nama Penanggung Jawab<span class="text-danger">*</span></p>
@@ -201,7 +181,6 @@
                                     class="form-control form-control-select2" data-fouc required>
                                     <option></option>
                                     @foreach ($provinsi as $vp)
-                                        {{-- <option value="{{ $vp->id }}">{{ $vp->name }}</option> --}}
                                         <option value="{{ $vp->id }}">
                                             {{ $vp->name }}
                                         </option>
@@ -215,7 +194,6 @@
                                     class="form-control form-control-select2" data-fouc required>
                                     <option></option>
                                     @foreach ($provinsi as $vp)
-                                        {{-- <option value="{{ $vp->id }}">{{ $vp->name }}</option> --}}
                                         <option value="{{ $vp->id }}">
                                             {{ $vp->name }}
                                         </option>
@@ -382,24 +360,3 @@
 
     </form>
 </div>
-<script>
-    function validatePdf(fileInput) {
-        const file = fileInput.files[0];
-        const allowedMimeType = 'application/pdf';
-        const maxFileSize = 5 * 1024 * 1024; // 5MB
-
-        if (file) {
-            if (file.type !== allowedMimeType) {
-                alert('Hanya file dengan format PDF yang diizinkan.');
-                fileInput.value = ''; // Clear the input
-                return;
-            }
-
-            if (file.size > maxFileSize) {
-                alert('Ukuran file tidak boleh melebihi 5MB.');
-                fileInput.value = ''; // Clear the input
-                return;
-            }
-        }
-    }
-</script>
