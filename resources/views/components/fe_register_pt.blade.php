@@ -88,8 +88,8 @@
                                     <td style="width: 60%;">
                                         <select class="form-control pilih-kbli">
                                             @foreach ($kbli as $kb)
-                                                <option value="{{ $kb->name }}">
-                                                    {{ $kb->name . ' - ', $kb->desc }}
+                                                <option value="{{ $kb->kblikode }}">
+                                                	{{ $kb->kblikode . ' - ', $kb->kbliname }}
                                                 </option>
                                             @endforeach
                                         </select>
