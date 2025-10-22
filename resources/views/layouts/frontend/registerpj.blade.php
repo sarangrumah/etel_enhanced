@@ -4,6 +4,29 @@
 <script src="global_assets/js/plugins/forms/selects/select2.min.js"></script>
 <script src="global_assets/js/demo_pages/form_layouts.js"></script>
 @endsection
+@section('custom-js')
+<script>
+    function validatePdf(fileInput) {
+        const file = fileInput.files[0];
+        const allowedMimeType = 'application/pdf';
+        const maxFileSize = 5 * 1024 * 1024; // 5MB
+
+        if (file) {
+            if (file.type !== allowedMimeType) {
+                alert('Hanya file dengan format PDF yang diizinkan.');
+                fileInput.value = ''; // Clear the input
+                return;
+            }
+
+            if (file.size > maxFileSize) {
+                alert('Ukuran file tidak boleh melebihi 5MB.');
+                fileInput.value = ''; // Clear the input
+                return;
+            }
+        }
+    }
+</script>
+@endsection
 @section('content')
 <div class="form-group">
     <div class="card">

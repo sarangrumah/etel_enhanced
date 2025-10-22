@@ -18,7 +18,7 @@
 			<div class="alert alert-info alert-styled-left alert-dismissible">
 				<span class="font-weight-semibold">Seluruh Dokumen dalam format PDF dan maksimal 5 MB.</span>
 			</div>
-			
+
 			<x-fe_register_pt />
 		</div>
     </div>
@@ -33,5 +33,28 @@
 			}
 		});
 	});
+</script>
+@endsection
+@section('custom-js')
+<script>
+    function validatePdf(fileInput) {
+        const file = fileInput.files[0];
+        const allowedMimeType = 'application/pdf';
+        const maxFileSize = 5 * 1024 * 1024; // 5MB
+
+        if (file) {
+            if (file.type !== allowedMimeType) {
+                alert('Hanya file dengan format PDF yang diizinkan.');
+                fileInput.value = ''; // Clear the input
+                return;
+            }
+
+            if (file.size > maxFileSize) {
+                alert('Ukuran file tidak boleh melebihi 5MB.');
+                fileInput.value = ''; // Clear the input
+                return;
+            }
+        }
+    }
 </script>
 @endsection
