@@ -46,7 +46,7 @@
                                 <p class="font-weight-semibold">Unggah Dokumen NIB <span class="text-danger">*</span>
                                 </p>
                                 <input type="file" name="vDokumenNib" id="vDokumenNib" class="form-control h-auto justify-content-center"
-                                    accept="application/pdf" onchange="validatePdf(this)" required>
+                                    accept="application/pdf" required>
                                 <small for="" class="text-danger mr-2">*Wajib Diisi Format PDF</small>
                                 <small for="" class="text-danger">*Maksimum File : 5Mb</small>
                             </div>
@@ -403,7 +403,7 @@
                                 </p>
                             @endif
                             <input type="file" name="vUploadNpwp" id="vUploadNpwp" class="form-control h-auto justify-content-center"
-                                accept="application/pdf" onchange="validatePdf(this)" required>
+                                accept="application/pdf" required>
                             <small for="" class="text-danger mr-2">*Wajib Diisi Format PDF</small>
                             <small for="" class="text-danger">*Maksimum File : 5Mb</small>
                         </div>
@@ -442,7 +442,7 @@
                                 Instansi Pemerintah<span class="text-danger">*</span>
                             </p>
                             <input type="file" name="vUngahSk" id="vUngahSk" class="form-control h-auto justify-content-center"
-                                accept="application/pdf" onchange="validatePdf(this)" required>
+                                accept="application/pdf" required>
                             <small for="" class="text-danger mr-2">*Wajib Diisi Format PDF</small>
                             <small for="" class="text-danger">*Maksimum File : 5Mb</small>
                         </div>
@@ -481,6 +481,5 @@
                         class="icon-paperplane ml-2"></i></button>
             </div>
         </fieldset>
-
     </form>
 </div>

@@ -46,7 +46,7 @@
                             <div class="col-lg-6">
                                 <p class="font-weight-semibold">Unggah Surat Tugas<span class="text-danger">*</span>
                                 </p>
-                                <input type="file" name="vSuratTugas" id="vSuratTugas" onchange="validatePdf(this)"
+                                <input type="file" name="vSuratTugas" id="vSuratTugas"
                                     class="form-control h-auto justify-content-center"
                                     value="{{ isset($oss->user_file_surat_tugas) ? $oss->user_file_surat_tugas : '' }}"
                                     required>
@@ -55,7 +55,7 @@
                             <div class="col-12">
                                 <p class="font-weight-semibold">Unggah Surat Tugas<span class="text-danger">*</span>
                                 </p>
-                                <input type="file" name="vSuratTugas" id="vSuratTugas" onchange="validatePdf(this)"
+                                <input type="file" name="vSuratTugas" id="vSuratTugas"
                                     class="form-control h-auto justify-content-center" accept="application/pdf"
                                     required>
                             </div>
@@ -81,7 +81,7 @@
 
                             <div class="col-lg-6">
                                 <p class="font-weight-semibold">Unggah KTP/Paspor Penanggung Jawab</p>
-                                <input type="file" name="vBerkasKtp" id="vBerkasKtp" onchange="validatePdf(this)"
+                                <input type="file" name="vBerkasKtp" id="vBerkasKtp"
                                     class="form-control h-auto justify-content-center" accept="application/pdf"
                                     value="{{ isset($oss->user_no_ktp) ? $oss->user_no_ktp : '' }}" required>
                             </div>
@@ -98,7 +98,7 @@
                                 <p class="font-weight-semibold">Unggah KTP/Paspor Penanggung Jawab<span
                                         class="text-danger">*</span>
                                 </p>
-                                <input type="file" name="vBerkasKtp" id="vBerkasKtp" onchange="validatePdf(this)"
+                                <input type="file" name="vBerkasKtp" id="vBerkasKtp"
                                     class="form-control h-auto justify-content-center" accept="application/pdf"
                                     value="{{ isset($oss->user_no_ktp) ? $oss->user_no_ktp : '' }}" required>
                             </div>
@@ -135,7 +135,7 @@
                             <div class="col-lg-6">
                                 <p class="font-weight-semibold">Unggah Kartu Pegawai/Surat Keterangan Bekerja
                                 </p>
-                                <input type="file" name="vKartuPegawai" id="vKartuPegawai" onchange="validatePdf(this)"
+                                <input type="file" name="vKartuPegawai" id="vKartuPegawai"
                                     class="form-control h-auto justify-content-center" accept="application/pdf"
                                     value="{{ isset($oss->user_file_kartu_pegawai) ? $oss->user_file_kartu_pegawai : '' }}"
                                     required>
@@ -145,7 +145,7 @@
                                 <p class="font-weight-semibold">Unggah Kartu Pegawai/Surat Keterangan Bekerja<span
                                         class="text-danger">*</span>
                                 </p>
-                                <input type="file" name="vKartuPegawai" id="vKartuPegawai" onchange="validatePdf(this)"
+                                <input type="file" name="vKartuPegawai" id="vKartuPegawai"
                                     class="form-control h-auto justify-content-center" accept="application/pdf"
                                     required>
                             </div>
@@ -315,7 +315,6 @@
                                 </div>
                             </div>
                         @endif
-
                     </div>
                 </div>
             </div>

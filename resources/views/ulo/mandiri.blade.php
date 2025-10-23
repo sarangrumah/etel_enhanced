@@ -4,14 +4,8 @@
 
 @endsection
 @section('content')
-    {{-- <x-frm-jartup-fo-ter />
-    <x-frm-komittahun />
-    <x-frm-kinerjalayanan />
-    <x-frm-dataalatperangkat />
-    <x-frm-jar-persyaratan /> --}}
     <form id="form-mandiri" action="{{ url('/ulo/submitmandiri') }}" method="post" enctype="multipart/form-data">
         @csrf
-        {{-- <input type="hidden" name="id_izin" value="{{ $id_izin }}"> --}}
         <div class="card">
             <div class="card-body">
                 <hr>
@@ -26,7 +20,7 @@
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label">Surat Tugas Pelaksanaan ULO Mandiri<span class="text-danger">*</span> <span class="text-danger" data-toggle="tooltip" data-placement="top" title="Pastikan upload dokumen sebelum tanggal pelaksanaan ulo"><i class="icon-question3"></i></span></label>
                                     <div class="col-lg-3">
-                                        <input type="file" name="stp_ulo_mandiri" id=""  accept="application/pdf" onchange="validatePdf(this)">
+                                        <input type="file" name="stp_ulo_mandiri" id=""  accept="application/pdf">
                                         <input type="hidden" name="status" value="20">
                                         <span class="text-danger">Maksimum File: 5Mb</span>
                                     </div>
@@ -34,7 +28,7 @@
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label">Hasil Pengujian ULO Mandiri<span class="text-danger">*</span> <span class="text-danger" data-toggle="tooltip" data-placement="top" title="Pastikan upload dokumen sebelum tanggal pelaksanaan ulo"><i class="icon-question3"></i></span></label>
                                     <div class="col-lg-3">
-                                        <input type="file" name="hp_ulo_mandiri" id=""  accept="application/pdf" onchange="validatePdf(this)">
+                                        <input type="file" name="hp_ulo_mandiri" id=""  accept="application/pdf">
                                         <span class="text-danger">Maksimum File: 5Mb</span>
                                     </div>
                                 </div>
@@ -88,27 +82,6 @@
         $('.notif-button').attr("hidden",true);
 		$('.loading').attr("hidden",false);
         $('#form-mandiri').submit();
-    }
-</script>
-<script>
-    function validatePdf(fileInput) {
-        const file = fileInput.files[0];
-        const allowedMimeType = 'application/pdf';
-        const maxFileSize = 5 * 1024 * 1024; // 5MB
-
-        if (file) {
-            if (file.type !== allowedMimeType) {
-                alert('Hanya file dengan format PDF yang diizinkan.');
-                fileInput.value = ''; // Clear the input
-                return;
-            }
-
-            if (file.size > maxFileSize) {
-                alert('Ukuran file tidak boleh melebihi 5MB.');
-                fileInput.value = ''; // Clear the input
-                return;
-            }
-        }
     }
 </script>
 @endsection

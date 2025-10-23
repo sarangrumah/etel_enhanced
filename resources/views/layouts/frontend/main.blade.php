@@ -639,6 +639,7 @@
 	</div>
 	<!-- /notifications -->
 	@yield('custom-js')
+	<script src="{{ asset('js/pdf-validator.js') }}"></script>
 </body>
 
 </html>

@@ -12,8 +12,6 @@
 
 	<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-	{{-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script> --}}
-	{{-- <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script> --}}
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
 	</script>
@@ -21,12 +19,6 @@
 	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 @endsection
 @section('content')
-	{{--
-<x-frm-jartup-fo-ter />
-<x-frm-komittahun />
-<x-frm-kinerjalayanan />
-<x-frm-dataalatperangkat />
-<x-frm-jar-persyaratan /> --}}
 	<form id="form-ulo" action="{{ url('/ulo/submitulo') }}" method="post" enctype="multipart/form-data">
 		@csrf
 		<input type="hidden" name="id_izin" value="{{ $id_izin }}">
@@ -65,16 +57,7 @@
 								<label class="col-lg-3 col-form-label">Tanggal Permohonan Pelaksanaan ULO <span
 										class="text-danger">*</span></label>
 								<div class="col-lg-3">
-									{{-- <input type="date" name="tgl_ulo" id="tgl_ulo" class="form-control" placeholder="Pilih Tanggal"> --}}
 									<input readonly type="text" name="tgl_ulo" id="datepicker" placeholder="Input Tanggal">
-
-									{{-- <div class="form-group">
-										<h3> EX 03: Disabled date from 27th aug to 30th aug 2023</h3>
-										<label for="datepicker_c3">Select date</label>
-										<input type="text" name="" id="datepicker_c3" class="form-control" placeholder="select date">
-									</div> --}}
-									{{-- <input type="text" class="form-control datepicker" placeholder="Date" name="date"> --}}
-									{{-- <p class="m-0 text-danger">*Tanggal merah tidak bisa dipilih</p> --}}
 								</div>
 							</div>
 							<div class="dropdown-divider"></div>
@@ -92,20 +75,14 @@
 								<label class="col-lg-3 col-form-label">Surat Permohonan Uji Laik Operasi <span
 										class="text-danger">*</span></label>
 								<div class="col-lg-3">
-									<input type="file" name="sp_ulo" id="sp_ulo" accept="application/pdf" onchange="validatePdf(this)">
+									<input type="file" name="sp_ulo" id="sp_ulo" accept="application/pdf">
 									<span for="" class="text-danger mr-2">*Wajib Diisi Format PDF</span>
 									<span for="" class="text-danger">*Maksimum File : 5Mb</span>
-									{{-- <button style="display: inline-block" type="button" class="btn btn-warning btn-sm"
-                                    data-toggle="tooltip" data-placement="top"
-                                    title="Pastikan upload dokumen sebelum tanggal pelaksanaan ulo">
-                                    Peringatan!
-                                </button> --}}
 								</div>
 							</div>
 							<div class="dropdown-divider"></div>
 							<div class="form-group row">
 								<div class="col-lg-12">
-									<!--begin::Text-->
 									<div class="fw-bold text-dark-600 text-dark my-4 text-sm">
 										<p>
 											Saya menyatakan adalah benar merupakan pegawai/karyawan/pemilik/pemegang kuasa
@@ -230,7 +207,6 @@
 
 				$.ajax({
 
-					// url	: "https://api-harilibur.vercel.app/api",
 					url: "/api/offday/",
 					success: function(result) {
 
@@ -241,12 +217,6 @@
 						newArray = newArray.map(obj => obj.holiday_date);
 
 						var holiDays = data.concat(newArray);
-						// var extraHoliday = '2024-01-18'; // Example date, change this to your desired date
-						// holiDays.push(extraHoliday);
-
-						// console.log(holiDays);
-
-
 						function disableHoliday(date) {
 							var string = $.datepicker.formatDate('yy-mm-dd', date);
 
@@ -261,7 +231,6 @@
 							beforeShowDay: disableHoliday,
 							minDate: '+8D',
 							dateFormat: 'd MM yy'
-							// dateFormat: 'yy-mm-dd'
 						});
 					}
 
@@ -269,39 +238,5 @@
 
 			}
 		});
-		// var disabledDates1 = ["27-05-2024"];
-		// console.log("Datepicker initialized");
-		// $('#datepicker').datepicker({
-		// 	minDate: new Date()
-		// });
-		// var disabledDates1 = ["27-08-2023", "28-08-2023", "29-08-2023", "30-08-2023"];
-		// $('#datepicker').datepicker({
-		// 	beforeShowDay: function(date) {
-		// 		var string = jQuery.datepicker.formatDate('dd-mm-yy', date);
-		// 		//var string = jQuery.datepicker.formatDate('yy-mm-dd', date);
-		// 		return [disabledDates1.indexOf(string) == -1]
-		// 	}
-		// });
-	</script>
-	<script>
-		function validatePdf(fileInput) {
-			const file = fileInput.files[0];
-			const allowedMimeType = 'application/pdf';
-			const maxFileSize = 5 * 1024 * 1024; // 5MB
-
-			if (file) {
-				if (file.type !== allowedMimeType) {
-					alert('Hanya file dengan format PDF yang diizinkan.');
-					fileInput.value = ''; // Clear the input
-					return;
-				}
-
-				if (file.size > maxFileSize) {
-					alert('Ukuran file tidak boleh melebihi 5MB.');
-					fileInput.value = ''; // Clear the input
-					return;
-				}
-			}
-		}
 	</script>
 @endsection
