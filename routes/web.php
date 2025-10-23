@@ -29,9 +29,9 @@ use Illuminate\Support\Facades\Route;
 
 // ===================================== MIDDLEWARE_ADMIN DISINI ================================
 // contoh : ->middleware('admin')
-// 
-// 
-// 
+//
+//
+//
 
 // Auth::routes();
 
@@ -99,12 +99,12 @@ Route::group(['prefix' => 'admin'], static function () {
 
         //ptsp user
         Route::get('/ptsp', [Admin\RekapController::class, 'AllRequest'])->name('admin.ptsp.laporan-request')->middleware('jabatancheck');
-        
+
 
         //Direktur
         Route::get('/direktur', [Admin\DirekturController::class, 'index'])->name('admin.direktur')->middleware('jabatancheck');
         Route::get('/direktur/sk-ulo', [Admin\DirekturController::class, 'skUlo'])->name('admin.direktur.sk-ulo')->middleware('jabatancheck');
-        
+
         Route::get('/direktur/evaluasi-penomoran/{id}', [Admin\DirekturController::class, 'evaluasiPenomoran'])->name('admin.direktur.evaluasipenomoran')->middleware('jabatancheck');
         Route::get('/direktur/ulo', [Admin\DirekturController::class, 'ulo'])->name('admin.direktur.ulo')->middleware('jabatancheck');
         Route::get('/direktur/penetapan-ulo/{id}/{urut}', [Admin\DirekturController::class, 'penetapanUlo'])->name('admin.direktur.penetapan-ulo')->middleware('jabatancheck');
@@ -130,7 +130,7 @@ Route::group(['prefix' => 'admin'], static function () {
         'pencabutanPenomoran'])->name('admin.direktur.cabutnomor')->middleware('jabatancheck');
         Route::post('/direktur/evaluasi-pencabutanpenomoranPost/{id}', [Admin\DirekturController::class,
         'pencabutanPenomoranPost'])->name('admin.direktur.evaluasi-pencabutanpenomoranPost')->middleware('jabatancheck');
-        
+
         Route::get('/direktur/cetak/{id}', [Admin\DirekturController::class, 'putFileSKPerubahan'])->middleware('jabatancheck');
 
         //User Manage
@@ -154,7 +154,7 @@ Route::group(['prefix' => 'admin'], static function () {
         //History Perizinan
         Route::get('/historyperizinan/{id}', [Admin\HistoryPerizinanController::class, 'index'])->name('admin.historyperizinan')->middleware('jabatancheck');
         Route::get('/historyperizinanulo/{id}', [Admin\HistoryPerizinanController::class, 'ulo'])->name('admin.historyperizinanulo')->middleware('jabatancheck');
-        
+
         //Master Holiday
 
         // Route::resource('/masterholiday', 'MasterHolidayController');
@@ -220,7 +220,7 @@ Route::group(['prefix' => 'admin'], static function () {
         'pencabutanPenomoran'])->name('admin.koordinator.cabutnomor')->middleware('jabatancheck');
         Route::post('/koordinator/evaluasi-pencabutanpenomoranPost/{id}', [Admin\KoordinatorController::class,
         'pencabutanPenomoranPost'])->name('admin.koordinator.evaluasi-pencabutanpenomoranPost')->middleware('jabatancheck');
-        
+
         //Subkoordinator
         Route::get('/subkoordinator', [Admin\SubkoordinatorController::class, 'index'])->name('admin.subkoordinator')->middleware('jabatancheck');
         Route::get('/subkoordinator/jasa', [Admin\SubkoordinatorController::class, 'jasa'])->name('admin.subkoordinator.jasa')->middleware('jabatancheck');
@@ -228,7 +228,7 @@ Route::group(['prefix' => 'admin'], static function () {
         Route::get('/subkoordinator/telsus', [Admin\SubkoordinatorController::class, 'telsus'])->name('admin.subkoordinator.telsus')->middleware('jabatancheck');
         Route::get('/subkoordinator/evaluasi/{id}', [Admin\SubkoordinatorController::class, 'evaluasi'])->name('admin.subkoordinator.evaluasi')->middleware('jabatancheck');
         Route::post('/subkoordinator/evaluasipost/{id}', [Admin\SubkoordinatorController::class, 'evaluasiPost'])->name('admin.subkoordinator.evaluasipost')->middleware('jabatancheck');
-        
+
         Route::post('/subkoordinator/evaluasiregisterpostpenolakan/{id}', [Admin\SubkoordinatorController::class, 'evaluasiPostPenolakan'])->name('admin.subkoordinator.evaluasi.penolakan')->middleware('jabatancheck');
         Route::get('/subkoordinator/ulo-jaringan', [Admin\SubkoordinatorController::class, 'uloJr'])->name('admin.subkoordinator.ulo-jaringan')->middleware('jabatancheck');
         Route::get('/subkoordinator/ulo-jasa', [Admin\SubkoordinatorController::class, 'uloJs'])->name('admin.subkoordinator.ulo-jasa')->middleware('jabatancheck');
@@ -267,7 +267,7 @@ Route::group(['prefix' => 'admin'], static function () {
         Route::get('/evaluator/evaluasi-ulo/{id}/{urut}', [Admin\EvaluatorController::class, 'evaluasiUlo'])->name('admin.evaluator.evaluasi-ulo')->middleware('jabatancheck');
         Route::get('/evaluator/tanggal-evaluasi-ulo/{id}/{urut}', [Admin\EvaluatorController::class, 'tanggalEvaluasiUlo'])->name('admin.evaluator.tanggal-evaluasi-ulo')->middleware('jabatancheck');
         Route::get('/evaluator/kirim-survey/{id}', [Admin\EvaluatorController::class, 'sendSurvey'])->name('admin.evaluator.kirim-survey')->middleware('jabatancheck');
-        
+
         Route::post('/evaluator/hasilevaluasiulopost/{id}/{urut}', [Admin\EvaluatorController::class, 'saveHasilEvaluasiUlo'])->name('admin.evaluator.hasilevaluasiulopost')->middleware('jabatancheck');
         Route::post('/evaluator/evaluasiulopost/{id}/{urut}', [Admin\EvaluatorController::class, 'evaluasiUloPost'])->name('admin.evaluator.evaluasiulopost')->middleware('jabatancheck');
         Route::post('/evaluator/kirimulo/{id}/{urut}', [Admin\EvaluatorController::class, 'kirimemail'])->name('admin.evaluator.kirimemail')->middleware('jabatancheck');
@@ -276,7 +276,7 @@ Route::group(['prefix' => 'admin'], static function () {
 
         Route::get('/evaluator/penomoran', [Admin\EvaluatorController::class, 'penomoran'])->name('admin.evaluator.penomoran')->middleware('jabatancheck');
         Route::get('/evaluator/evaluasi-penomoran/{id}/{idkodeakses}', [Admin\EvaluatorController::class, 'evaluasiPenomoran'])->name('admin.evaluator.evaluasi-penomoran')->middleware('jabatancheck');
-        Route::post('/evaluator/evaluasi-penomoranPost/{id}/{idkodeakses}', [Admin\EvaluatorController::class, 
+        Route::post('/evaluator/evaluasi-penomoranPost/{id}/{idkodeakses}', [Admin\EvaluatorController::class,
         'evaluasiPenomoranPost'])->name('admin.evaluator.evaluasi-penomoran-post')->middleware('jabatancheck');
         Route::post('/evaluator/evaluasi-pencabutanpenomoranPost/{id}', [Admin\EvaluatorController::class,
         'savepencabutanpenomoran'])->name('admin.evaluator.evaluasi-pencabutanpenomoranPost')->middleware('jabatancheck');
@@ -284,7 +284,7 @@ Route::group(['prefix' => 'admin'], static function () {
         'savepenetapanulangpenomoran'])->name('admin.evaluator.evaluasi-penetapanulangpenomoranPost')->middleware('jabatancheck');
         Route::post('/evaluator/evaluasi-penomoranSave/{id}/{idkodeakses}', [Admin\EvaluatorController::class,
         'evaluasiPenomoranSave'])->name('admin.evaluator.evaluasi-penomoran-save')->middleware('jabatancheck');
-        
+
         Route::post('/izin/evaluasi-registerpost/{id}', [Admin\EvaluatorController::class, 'evaluasiRegisterPost'])->name('admin.evaluator.evaluasiregisterpost');
 
         Route::get('/evaluator/evaluasi-penyesuaian/{id}', [Admin\EvaluatorController::class, 'evaluasiPenyesuaian'])->name('admin.evaluator.evaluasi.penyesuaian')->middleware('jabatancheck');
@@ -319,11 +319,11 @@ Route::group(['prefix' => 'admin'], static function () {
         Route::get('/sk/draft-izin-penyelenggaraan-telsus/{id}', [Admin\SkController::class, 'draftIzinPenyelenggaraan'])->name('admin.sk.draftIzinPenyelenggaraan')->middleware('jabatancheck');
         Route::get('/sk/draft-pencabutan-izin-penyelenggaraan-telsus/{id}', [Admin\SkController::class, 'draftIzinPencabutan'])->name('admin.sk.draftIzinPencabutan')->middleware('jabatancheck');
         Route::get('/sk/draft-perpanjangan-izin-penyelenggaraan-telsus/{id}', [Admin\SkController::class, 'draftIzinPerpanjangan'])->name('admin.sk.draftIzinPerpanjangan')->middleware('jabatancheck');
-        
+
         Route::get('/evaluator/koreksikomitmen', [Admin\EvaluatorController::class, 'koreksi_komitmen'])->name('admin.evaluator.koreksikomitmen')->middleware('jabatancheck');
         Route::get('/evaluator/koreksikomitmen/{id}', [Admin\EvaluatorController::class, 'koreksi_komitmen_id'])->name('admin.evaluator.koreksikomitmen_id')->middleware('jabatancheck');
         Route::post('/evaluator/koreksikomitmenpost/{id}', [Admin\EvaluatorController::class, 'koreksikomitmenpost'])->name('admin.evaluator.koreksikomitmenpost')->middleware('jabatancheck');
-        
+
         Route::get('/pencabutan-penomoran', [Admin\PencabutanPenomoranController::class, 'index'])->name('admin.pencabutan-penomoran')->middleware('jabatancheck');
         Route::get('/pencabutan/{id}/{id_kodeakses}', [Admin\PencabutanPenomoranController::class, 'pencabutan'])->name('admin.pencabutan-penomoran-proses')->middleware('jabatancheck');
         Route::post('/pencabutanpost/{id}/{id_kodeakses}', [Admin\PencabutanPenomoranController::class, 'pencabutanPost'])->name('admin.pencabutanpost')->middleware('jabatancheck');
@@ -348,8 +348,8 @@ Route::group(['prefix' => 'admin'], static function () {
         Route::get('/rekapbimtek', [Admin\RekapController::class, 'RekapBimtek'])->name('admin.rekapbimtek')->middleware('jabatancheck');
         Route::get('/detailpelakuusaha/{id}', [Admin\RekapController::class, 'DetailPelakuUsaha'])->name('admin.detailpelakuusaha')->middleware('jabatancheck');
 
-        
-        
+
+
         Route::get('/svmgmt/create', [Admin\SurveyController::class, 'create'])->name('admin.svmgmt.create')->middleware('jabatancheck');
         Route::post('/svmgmt/store', [Admin\SurveyController::class, 'store'])->name('admin.svmgmt.store')->middleware('jabatancheck');
         Route::post('/svmgmt/update/{id}', [Admin\SurveyController::class, 'update'])->name('admin.svmgmt.update')->middleware('jabatancheck');
@@ -382,7 +382,7 @@ Route::group(['prefix' => 'admin'], static function () {
         Route::get('/bigdata/survey-telsus', [Admin\BigdataController::class, 'surveyTelsus'])->middleware('jabatancheck');
         Route::get('/bigdata/survey-penomoran', [Admin\BigdataController::class, 'surveyPenomoran'])->middleware('jabatancheck');
         Route::get('/bigdata/survey-ulo', [Admin\BigdataController::class, 'surveyUlo'])->middleware('jabatancheck');
-        
+
         Route::get('/bgdt-download', [Admin\BigdataController::class, 'export'])->middleware('jabatancheck');
 
         Route::get('/survei/manage', [Admin\SurveiController::class, 'index'])->middleware('jabatancheck');
@@ -435,6 +435,9 @@ Route::get('/registerpt', function () {
 
 Route::get('/rekap-sklo',[App\Http\Controllers\RekapController::class, 'index'])->name('rekap-sklo');
 
+Route::get('/version', function () {
+    return view('version');
+});
 
 Route::get('/mainpn/{nib}', [PermohonanPenomoranController::class, 'index']);
 Route::get('/penomoran', function () {

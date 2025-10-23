@@ -469,7 +469,7 @@
 
 		<div class="navbar-collapse collapse" id="navbar-footer">
 			<span class="navbar-text">
-				&copy; 2022. <a href="javascript:void(0)">KOMINFO - eLicensing</a>
+				&copy; 2022. <a href="javascript:void(0)">KOMINFO - eLicensing</a> <a href="/version" target="_blank">v{{ config('app.version') }}</a>
 			</span>
 
 			<ul class="navbar-nav ml-lg-auto">
