@@ -54,7 +54,7 @@ class LoginController extends Controller
 
         $request->validate([
             'captcha' => ['required', Rule::in([$request->session()->get('CAPTCHA_CODE')])],
-            $this->username() => 'required|string|regex:/^[\pL\s\-]+$/u',
+            $this->username() => 'required|string|email',
             'password' => 'required|string',
         ]);
     }
