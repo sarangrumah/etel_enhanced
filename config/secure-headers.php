@@ -249,7 +249,7 @@ return [
         'document-domain' => [
             'none' => false,
 
-            '*' => true,
+            '*' => false,
 
             'self' => false,
 
@@ -381,7 +381,7 @@ return [
         'picture-in-picture' => [
             'none' => false,
 
-            '*' => true,
+            '*' => false,
 
             'self' => false,
 
@@ -414,7 +414,7 @@ return [
         'sync-xhr' => [
             'none' => false,
 
-            '*' => true,
+            '*' => false,
 
             'self' => false,
 
