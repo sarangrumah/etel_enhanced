@@ -78,7 +78,7 @@ class LogHelper{
         return $insertUloLog;
     }
 
-    public function createLog(Request $request, $logAction, $logDetail, $dataBefore = null, $dataAfter = null, $additionalInfo = ''){
+    public function createLog($logAction, $logDetail, $dataBefore = null, $dataAfter = null, $additionalInfo = ''){
         if (isset(Auth::user()->email)) {
             $email = Auth::user()->email;
         } else {
@@ -89,9 +89,18 @@ class LogHelper{
         $log['log_detail'] = $logDetail;
         $log['log_datetime'] = date('Y-m-d H:i:s');
         $log['log_additionalinfo'] = $additionalInfo;
-        $log['ip_address'] = $request->ip();
-        $log['user_agent'] = $request->header('User-Agent');
-        $log['url'] = $request->fullUrl();
+
+        $request = request();
+        if ($request && !app()->runningInConsole()) {
+            $log['ip_address'] = $request->ip();
+            $log['user_agent'] = $request->header('User-Agent');
+            $log['url'] = $request->fullUrl();
+        } else {
+            $log['ip_address'] = null;
+            $log['user_agent'] = null;
+            $log['url'] = null;
+        }
+
         $log['data_before'] = json_encode($dataBefore);
         $log['data_after'] = json_encode($dataAfter);
         $log['log_action'] = $logAction;

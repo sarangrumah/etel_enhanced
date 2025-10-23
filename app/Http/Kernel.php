@@ -40,6 +40,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Spatie\Csp\AddCspHeaders::class,
             \Bepsvpt\SecureHeaders\SecureHeadersMiddleware::class,
+            \App\Http\Middleware\LogActivity::class,
         ],
 
         'admin' => [
