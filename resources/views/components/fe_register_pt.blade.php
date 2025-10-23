@@ -484,24 +484,3 @@
 
     </form>
 </div>
-<script>
-    function validatePdf(fileInput) {
-        const file = fileInput.files[0];
-        const allowedMimeType = 'application/pdf';
-        const maxFileSize = 5 * 1024 * 1024; // 5MB
-
-        if (file) {
-            if (file.type !== allowedMimeType) {
-                alert('Hanya file dengan format PDF yang diizinkan.');
-                fileInput.value = ''; // Clear the input
-                return;
-            }
-
-            if (file.size > maxFileSize) {
-                alert('Ukuran file tidak boleh melebihi 5MB.');
-                fileInput.value = ''; // Clear the input
-                return;
-            }
-        }
-    }
-</script>

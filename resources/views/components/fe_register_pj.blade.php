@@ -357,6 +357,5 @@
                         class="icon-paperplane ml-2"></i></button>
             </div>
         </fieldset>
-
     </form>
 </div>
