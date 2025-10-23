@@ -10,10 +10,10 @@ use App\Models\Admin\Izinlog;
 use Illuminate\Http\Request;
 use App\Models\Admin\Ulolog;
 use App\Models\Admin\JobPosition;
-use Session;
+use Illuminate\Support\Facades\Session;
 
 class LogHelper{
- 	
+
 	public function createIzinLog($izin,$catatan){
         $izin = $izin->toArray();
         $jabatan = JobPosition::select('*')->where('id','=',Session::get('id_mst_jobposition'))->first();
@@ -78,24 +78,28 @@ class LogHelper{
         return $insertUloLog;
     }
 
-    public function createLog($logchanges, $log_additional = ''){
-        // dd(session()->all());
+    public function createLog(Request $request, $logAction, $logDetail, $dataBefore = null, $dataAfter = null, $additionalInfo = ''){
         if (isset(Auth::user()->email)) {
             $email = Auth::user()->email;
         } else {
-            $email = Session::get('email'); 
+            $email = Session::get('email');
         }
-        
-        $jabatan = JobPosition::select('*')->where('id','=',Session::get('id_mst_jobposition'))->first();
-        // dd();
+
         $log['log_userid'] = $email;
-        $log['log_detail'] = $logchanges;
+        $log['log_detail'] = $logDetail;
         $log['log_datetime'] = date('Y-m-d H:i:s');
-        $log['log_additionalinfo'] = $log_additional;
+        $log['log_additionalinfo'] = $additionalInfo;
+        $log['ip_address'] = $request->ip();
+        $log['user_agent'] = $request->header('User-Agent');
+        $log['url'] = $request->fullUrl();
+        $log['data_before'] = json_encode($dataBefore);
+        $log['data_after'] = json_encode($dataAfter);
+        $log['log_action'] = $logAction;
         $log['created_date'] = date('Y-m-d H:i:s');
         $log['created_by'] = $email;
         $log['updated_date'] = date('Y-m-d H:i:s');
         $log['updated_by'] = $email;
+
         $inserLog = DB::table('log_trans')->insert($log);
         return $inserLog;
     }
