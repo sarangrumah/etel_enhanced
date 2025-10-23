@@ -53,7 +53,11 @@ class LoginController extends Controller
         session(['_previous' => route('login')]);
 
         $request->validate([
-            'captcha' => ['required', Rule::in([$request->session()->get('CAPTCHA_CODE')])],
+            'captcha' => ['required', function ($attribute, $value, $fail) use ($request) {
+                if (strcasecmp($value, $request->session()->get('CAPTCHA_CODE')) !== 0) {
+                    $fail('The '.$attribute.' is invalid.');
+                }
+            }],
             $this->username() => 'required|string|email',
             'password' => 'required|string',
         ]);
