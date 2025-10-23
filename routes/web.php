@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin;
 use App\Http\Controllers\JenisPenomoranController;
 use App\Http\Controllers\PermohonanPenomoranController;
 use App\Http\Controllers\Api;
+use App\Http\Controllers\ReactivationController;
 // use App\Http\Controllers\Admin\HelpdeskController;
 use App\Http\Controllers\Admin\InstansiPemerintah;
 use App\Libraries\Captcha;
@@ -38,6 +39,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/generate', [Captcha::class, 'generate']);
 
 Route::get('/sso', [Api\Ossapi::class, 'SSO'])->name('sso_url');
+
+
+Route::get('/reactivation/notice', [ReactivationController::class, 'showNotice'])->name('reactivation.notice');
+Route::post('/reactivation/request', [ReactivationController::class, 'requestReactivation'])->name('reactivation.request');
 
 
 
@@ -144,6 +149,11 @@ Route::group(['prefix' => 'admin'], static function () {
         // User Activities
         Route::get('/user-activities', [Admin\UserActivityController::class, 'index'])->name('admin.user-activities.index');
 
+        // Reactivation Requests
+        Route::get('/reactivations', [Admin\ReactivationController::class, 'index'])->name('admin.reactivations.index');
+        Route::post('/reactivations/{reactivationRequest}/approve', [Admin\ReactivationController::class, 'approve'])->name('admin.reactivations.approve');
+        Route::post('/reactivations/{reactivationRequest}/reject', [Admin\ReactivationController::class, 'reject'])->name('admin.reactivations.reject');
+       
         //Faq Manage
         Route::get('/faqs', [Admin\FaqsController::class, 'index'])->name('admin.faq')->middleware('jabatancheck');
         Route::get('/faqs/add', [Admin\FaqsController::class, 'addFaqs'])->name('admin.addfaq')->middleware('jabatancheck');

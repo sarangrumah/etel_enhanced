@@ -31,6 +31,16 @@
                         {{ $errors->first('throttle') }}
                     </div>
                 @endif
+                @if (session('notification'))
+                    <div class="alert alert-danger">
+                        {{ session('notification') }}
+                    </div>
+                @endif
+                @if (session('notification'))
+                    <div class="alert alert-danger">
+                        {{ session('notification') }}
+                    </div>
+                @endif
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

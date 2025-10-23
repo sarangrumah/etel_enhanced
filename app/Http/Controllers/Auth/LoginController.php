@@ -68,4 +68,17 @@ class LoginController extends Controller
         Auth::logout();
         return redirect('/login');
     }
+
+    /**
+     * The user has been authenticated.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  mixed  $user
+     * @return mixed
+     */
+    protected function authenticated(Request $request, $user)
+    {
+        $user->last_login_at = now();
+        $user->save();
+    }
 }

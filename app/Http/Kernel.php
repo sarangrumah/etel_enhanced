@@ -41,6 +41,8 @@ class Kernel extends HttpKernel
             \Spatie\Csp\AddCspHeaders::class,
             \Bepsvpt\SecureHeaders\SecureHeadersMiddleware::class,
             \App\Http\Middleware\LogActivity::class,
+            \App\Http\Middleware\CheckUserActivity::class,
+            \App\Http\Middleware\CheckUserStatus::class,
         ],
 
         'admin' => [
@@ -79,5 +81,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'admin' => \App\Http\Middleware\AdminAuth::class,
         'jabatancheck' => \App\Http\Middleware\Jabatancheck::class,
+        'status' => \App\Http\Middleware\CheckUserStatus::class,
     ];
 }
