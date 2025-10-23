@@ -104,7 +104,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/', function () {
         $log= new LogHelper();
-        $log->createLog('Akses Dashboard');
+        $log->createLog('Login', 'Akses Dashboard');
         $utilizin = new UtilPerizinan();
         $date_reformat = new DateHelper();
         $izin = $utilizin->getIzin("ALL");
@@ -128,7 +128,7 @@ Route::middleware(['auth'])->group(function () {
 
         $status_pelakuusaha = DB::table('vw_nib_detail')->select('*')
         ->where('oss_id',$user_oss_id)->first();
-        
+
         $kblinomor = DB::table('tb_mst_izinlayanan')
         ->select('*')->where('non_oss','6')->where('is_active','1')->get();
         $kblinomor_pt = DB::table('tb_mst_izinlayanan')
@@ -146,12 +146,12 @@ Route::middleware(['auth'])->group(function () {
         }
         // $kblinomor = DB::table('tb_mst_izinlayanan')
         // ->select('*')->where('non_oss','6')->where('is_active','1')->get();
-        
-       
-        
+
+
+
         // $kblinomor_pt = DB::table('tb_mst_izinlayanan')
         // ->select('*')->whereIn('non_oss',['5','6'])->where('is_active','1')->get();
-        // dd($izin);   
+        // dd($izin);
         // $user_oss = Auth::user();
         // $user_oss_id = $user_oss->oss_id;
         // $status_evaluasi = DB::table('tb_oss_user')->select('*')->where('no_id_user_proses',$user_oss->id)->first();
@@ -165,14 +165,14 @@ Route::middleware(['auth'])->group(function () {
         $done = count($utilizin->getIzin("DONE"));
         // dd($kblijasa,$kblijaringan);
         $proses = count($utilizin->getIzin("PROSES"));
-        return view('layouts.frontend.dashboard', compact('izin', 'done', 'rejected', 
+        return view('layouts.frontend.dashboard', compact('izin', 'done', 'rejected',
         'proses','date_reformat','penomoran','kblijasa','kblijaringan','kblitelsus','kblitelsusip','kblinomor','kblinomor_pt','status_evaluasi','status_suspend','status_evaluasi_msg'));
     });
 
     // Route::get('/historyperizinan/{id}', [App\Http\Controllers\PBController::class, 'logFo'])->name('historyperizinan')->middleware('jabatancheck');
 
    Route::get('/testemail/koordinator/{id}', [testEmailController::class, 'testemail_ketuatim_disposisi_instansi']);
-        
+
 
 
     Route::get('/getjenispenomoran/{id}', function($id){
@@ -192,7 +192,7 @@ Route::middleware(['auth'])->group(function () {
         // return view('\layouts\backend\dashboard');
         return redirect('/');
     });
-    
+
     Route::get('/dashboard_penomoran', [App\Http\Controllers\PermohonanPenomoranController::class,
     'dashboard_penomoran'])->name('dashboard_penomoran');
     Route::get('/dashboard_penomoran_tetap', [App\Http\Controllers\PermohonanPenomoranController::class, 'dashboard_penetapan'])->name('dashboard_penetapan');
@@ -213,11 +213,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/registerpt', function () {
         return view('\layouts\frontend\registerpt');
     });
-    
+
     Route::get('/survei/detail/{id}', [SurveiController::class, 'index'])->name('survei.detail');
     Route::post('/survei/detail', [SurveiController::class, 'post'])->name('survei.post');
     Route::get('/survei/isi', [SurveiController::class, 'isi'])->name('survei.isi');
-    
+
 
     Route::get('/izin', [App\Http\Controllers\PBController::class, 'testizin']);
     Route::prefix('/pb')->group(function () {
@@ -231,7 +231,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/submitpersyarataniptelsus', [App\Http\Controllers\PemenuhanPersyaratanController::class, 'submitpersyaratanIPtelsus'])->name('pb_submitpersyarataniptelsus');
         Route::get('/submitpersyaratanip', [App\Http\Controllers\PemenuhanPersyaratanController::class, 'submitpersyaratanIP'])->name('pb_submitpersyaratanip');
         Route::post('/submitpersyaratanip', [App\Http\Controllers\PemenuhanPersyaratanController::class, 'submitpersyaratanIP'])->name('pb_submitpersyaratanip');
-        
+
         Route::get('/exnted-izinprinsip/{id}', [App\Http\Controllers\PemenuhanPersyaratanController::class,
         'submitperpanjanganiptelsus']);
         Route::get('/pemenuhan-persyaratan/ip/{id}', [App\Http\Controllers\PemenuhanPersyaratanController::class,
@@ -279,11 +279,11 @@ Route::middleware(['auth'])->group(function () {
 
         // END QUERY BY DATA
 
-        
+
         Route::get('/dashboard_penomoran', [App\Http\Controllers\PermohonanPenomoranController::class,
         'dashboard_penomoran'])->name('dashboard_penomoran');
         Route::get('/dashboard_penomoran_tetap', [App\Http\Controllers\PermohonanPenomoranController::class, 'dashboard_penetapan'])->name('dashboard_penetapan');
-    
+
 
     });
 
@@ -303,7 +303,7 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/submitmandiri', [App\Http\Controllers\UloController::class, 'submitMandiri'])->name('submitMandiri');
         Route::get('/offday', [App\Http\Controllers\UloController::class, 'offDay'])->name('offday');
         //END PERMOHONAN ULO
-        
+
         // PENEPATAN ULO
         Route::get('/penetapan/{izin}', [App\Http\Controllers\PenetapanController::class, 'indexUlo']);
         // Route::post('/penetapan_get_by_date_jasa', [App\Http\Controllers\PenetapanController::class, 'penetapan_get_query_by_date_jasa'])->name('penetapan_get_by_date_jasa');
@@ -392,7 +392,7 @@ Route::prefix('/ip')->group(function(){
 
     Route::get('/registerpj', [InstansiPemerintah::class, 'registerpj'])->name('registerpj');
     Route::post('/registerpj', [InstansiPemerintah::class, 'registerpjPost'])->name('registerpjPost');
-    
+
     // API ALAMAT
     Route::post('/getKabupaten', [InstansiPemerintah::class, 'getKabupaten'])->name('getKabupaten');
     Route::post('/getKecamatan', [InstansiPemerintah::class, 'getKecamatan'])->name('getKecamatan');
@@ -401,7 +401,7 @@ Route::prefix('/ip')->group(function(){
     Route::get('/updateemail', [InstansiPemerintah::class, 'updateemail'])->name('updateemail');
     Route::get('/updatenib', [InstansiPemerintah::class, 'updatenib'])->name('updatenib');
     Route::post('/updateippost', [InstansiPemerintah::class, 'updateemailnibpost'])->name('updateemailnibpost');
-}); 
+});
 
 
 
