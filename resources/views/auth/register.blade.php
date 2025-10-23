@@ -225,6 +225,7 @@
                                     <input id="password-confirm" type="password" placeholder="Konfirmasi Kata Sandi Anda"
                                         class="form-control" name="password_confirmation" required
                                         autocomplete="new-password">
+                                    <small id="password-match" class="text-danger" style="display:none;">Kata sandi tidak cocok</small>
                                 </div>
                             </div>
 
@@ -286,8 +287,9 @@
                 $('#password-strength').show();
             });
 
-            $('#password').on('keyup', function() {
-                var password = $(this).val();
+            function validatePassword() {
+                var password = $('#password').val();
+                var confirmPassword = $('#password-confirm').val();
 
                 // Validate length
                 if (password.length >= 8) {
@@ -331,7 +333,19 @@
                     $('#special').removeClass('text-success').addClass('text-danger').html(
                         '❌ Minimal 1 karakter spesial');
                 }
-            });
+
+                // Validate password match
+                if (password === confirmPassword && confirmPassword.length > 0) {
+                    $('#password-match').hide();
+                } else if (confirmPassword.length > 0) {
+                    $('#password-match').show();
+                } else {
+                    $('#password-match').hide();
+                }
+            }
+
+            $('#password').on('keyup', validatePassword);
+            $('#password-confirm').on('keyup', validatePassword);
         });
     </script>
 @endsection
