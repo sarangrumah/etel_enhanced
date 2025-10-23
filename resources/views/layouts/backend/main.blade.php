@@ -83,6 +83,7 @@
 								<a href="{{ route('admin.verifikatornib.evaluasiregistrasi') }}" class="dropdown-item rounded">Evaluasi
 									Register</a>
 								<a href="{{ route('admin.user') }}" class="dropdown-item rounded">Daftar Pengguna</a>
+								<a href="{{ route('admin.user-activities.index') }}" class="dropdown-item rounded">User Activities</a>
 								<a href="{{ route('admin.masterholiday') }}" class="dropdown-item rounded">Daftar Hari
 									Libur</a>
 								<a href="{{ route('admin.evaluator.manageschedule') }}" class="dropdown-item rounded">Kelola Jadwal ULO</a>

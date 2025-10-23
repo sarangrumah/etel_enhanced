@@ -141,6 +141,9 @@ Route::group(['prefix' => 'admin'], static function () {
         Route::post('/users/edit/{id}', [Admin\UsersController::class, 'editUsersPost'])->name('admin.edituserpost')->middleware('jabatancheck');
         Route::get('/users/delete/{id}', [Admin\UsersController::class, 'deleteUsers'])->name('admin.deleteuser')->middleware('jabatancheck');
 
+        // User Activities
+        Route::get('/user-activities', [Admin\UserActivityController::class, 'index'])->name('admin.user-activities.index');
+
         //Faq Manage
         Route::get('/faqs', [Admin\FaqsController::class, 'index'])->name('admin.faq')->middleware('jabatancheck');
         Route::get('/faqs/add', [Admin\FaqsController::class, 'addFaqs'])->name('admin.addfaq')->middleware('jabatancheck');

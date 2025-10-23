@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Admin;
+use App\Models\UserActivity;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
@@ -100,6 +101,13 @@ class LoginController extends Controller
                     Session::put('email', $array_admin['email']);
                     Session::put('nama', $array_admin['nama']);
                     Session::put('id_mst_jobposition', $id_mst_jobposition);
+
+                    UserActivity::create([
+                        'user_id' => $admin->id,
+                        'activity' => 'Logged in',
+                        'ip_address' => $request->ip(),
+                        'user_agent' => $request->header('User-Agent'),
+                    ]);
 
                     if ($id_jabatan == 1) { //Direktur
                         return redirect()->route('admin.direktur');
