@@ -11,7 +11,7 @@
 
 	<!-- Global stylesheets -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900"
-		integrity="sha384-qG0E00yS7hr8A2CPVjXFNSt9f5rWICyFvnzrUzKScqX4BbzZOPQkp3WiaU29YFsO" crossorigin="anonymous">
+		integrity="sha384-m5iGg6CvK9enCoP+Oy2jgSw7UmJ26yrh+iZJACWthZWot08jAGkyi2r5rahTwHIl" crossorigin="anonymous">
 	<link href="/global_assets/css/icons/icomoon/styles.min.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/all.min.css" rel="stylesheet" type="text/css">
 	{{-- <link rel="stylesheet" href="/global_assets/css/extras/jquery-ui.css"> --}}
