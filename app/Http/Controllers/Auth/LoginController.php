@@ -7,7 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -23,6 +23,13 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+
+    public function showLoginForm()
+    {
+        return view('auth.login');
+    }
+    protected $maxAttempts = 3;
+    protected $decayMinutes = 5;
 
     /**
      * Where to redirect users after login.
@@ -44,10 +51,10 @@ class LoginController extends Controller
     protected function validateLogin(Request $request)
     {
         session(['_previous' => route('login')]);
-        
+
         $request->validate([
             'captcha' => ['required', Rule::in([$request->session()->get('CAPTCHA_CODE')])],
-            $this->username() => 'required|string',
+            $this->username() => 'required|string|regex:/^[\pL\s\-]+$/u',
             'password' => 'required|string',
         ]);
     }

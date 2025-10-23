@@ -7,15 +7,19 @@ use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Admin;
-use Session;
-use DB;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
 
 class LoginController extends Controller
 {
+    use ThrottlesLogins;
 
+    protected $maxAttempts = 3;
+    protected $decayMinutes = 5;
     protected $guard = 'admin';
 
     // protected $redirectTo = '/admin';
@@ -31,7 +35,7 @@ class LoginController extends Controller
     {
         $id_user_session = Session::get('id_user');
         $id_jabatan_session = Session::get('id_jabatan');
-        
+
         if ($id_user_session != '') {
             if ($id_jabatan_session == 2) {
                 return redirect()->route('admin.koordinator');
@@ -43,7 +47,7 @@ class LoginController extends Controller
                 return redirect()->route('admin.direktur');
             }
         }else{
-            return view('admin.login');    
+            return view('admin.login');
         }
     }
 
@@ -55,12 +59,18 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         session(['_previous' => url('/admin/login')]);
-        
+
         $request->validate([
             'captcha' => ['required', Rule::in([$request->session()->get('CAPTCHA_CODE')])],
-            'username' => 'required|string',
+            'username' => 'required|string|regex:/^[\pL\s\-]+$/u',
             'password' => 'required|string',
         ]);
+
+        if ($this->hasTooManyLoginAttempts($request)) {
+            $this->fireLockoutEvent($request);
+
+            return $this->sendLockoutResponse($request);
+        }
 
         $admin = Admin::where('username', TRIM($request->username))->where('is_active', 1)->first();
 
@@ -80,7 +90,7 @@ class LoginController extends Controller
                     'username' => TRIM($request->username),
                     'password' => $request->password,
                 ])) {
-
+                    $this->clearLoginAttempts($request);
                     // session()->flash('message', 'Selamat datang kembali di halaman admin.');
 
                     Session::put('id_user', $array_admin['id']);
@@ -108,11 +118,12 @@ class LoginController extends Controller
                 }
             } else {
 
+                $this->incrementLoginAttempts($request);
                 session()->flash('message', 'Password anda salah');
                 return redirect('/admin/login');
             }
         } else {
-
+            $this->incrementLoginAttempts($request);
             session()->flash('message', 'Username anda salah');
             return redirect('/admin/login');
         }
@@ -126,5 +137,10 @@ class LoginController extends Controller
         session()->flash('message', 'Berhasil keluar dari sistem');
 
         return redirect('/admin/login');
+    }
+
+    public function username()
+    {
+        return 'username';
     }
 }

@@ -4,12 +4,17 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            
+
             @if($errors->get('g-recaptcha-response'))
             <div class="alert alert-danger alert-block">
-                <button type="button" class="close" data-dismiss="alert">×</button>    
+                <button type="button" class="close" data-dismiss="alert">×</button>
                 <strong>Silakan checklist Recaptcha</strong>
             </div>
+            @endif
+            @if ($errors->has('throttle'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('throttle') }}
+                </div>
             @endif
             <div class="card">
                 <div class="card-header bg-secondary text-center"><h2 class="text-white mb-0">{{ __('Login') }}</h2></div>
@@ -63,7 +68,7 @@
                                     </span>
                                 @enderror
                             </div>
-                            
+
                         </div>
 
                         <!-- <div class="row mb-3">

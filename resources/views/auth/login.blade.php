@@ -11,19 +11,24 @@
                 <div class="alert alert-info border-0 alert-dismissible">
                     {{-- <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button> --}}
                     <span class="font-weight-semibold">Harap Diperhatikan!</span> Mohon ikuti panduan penggunaan aplikasi e-Telekomunikasi. <a href="/storage/guideline-etelekomunikasi.pdf" class="alert-link">Unduh Panduan</a>.
-                </div>					
+                </div>
                 @if (Session::get('message'))
                     <div class="alert alert-warning alert-block">
 
                         <strong>{{Session::get('message')}}</strong>
 
                     </div>
-                @endif					
+                @endif
                 @if (isset($message))
                     <div class="alert alert-warning alert-block">
 
                         <strong>{{isset($message) ? $message : '-'}}</strong>
 
+                    </div>
+                @endif
+                @if ($errors->has('throttle'))
+                    <div class="alert alert-danger">
+                        {{ $errors->first('throttle') }}
                     </div>
                 @endif
                 <div class="card-body">
