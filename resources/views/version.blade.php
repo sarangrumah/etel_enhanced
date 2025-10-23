@@ -3,11 +3,14 @@
 @section('content')
 <div class="container">
     <h1>Version Information</h1>
-    <p>Current Version: {{ config('app.version') }}</p>
 
-    <h2>Release Notes</h2>
-    <ul>
-        <li>Initial release.</li>
-    </ul>
+    @foreach ($versions as $version)
+        <h2>Version {{ $version->version }}</h2>
+        <p><strong>Release Date:</strong> {{ $version->release_date }}</p>
+        <div>
+            {!! $version->notes !!}
+        </div>
+        <hr>
+    @endforeach
 </div>
 @endsection

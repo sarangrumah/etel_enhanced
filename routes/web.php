@@ -435,9 +435,7 @@ Route::get('/registerpt', function () {
 
 Route::get('/rekap-sklo',[App\Http\Controllers\RekapController::class, 'index'])->name('rekap-sklo');
 
-Route::get('/version', function () {
-    return view('version');
-});
+Route::get('/version', [\App\Http\Controllers\VersionController::class, 'index']);
 
 Route::get('/mainpn/{nib}', [PermohonanPenomoranController::class, 'index']);
 Route::get('/penomoran', function () {
