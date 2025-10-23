@@ -26,16 +26,20 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        @error('nib')
-                            <div class="alert alert-danger" role="alert">
-
-                                {{ $message }}
-
-                            </div>
-                        @enderror
-                    </div>
                     <div class="card-body">
+                        @if ($errors->has('nib') || $errors->has('name_pt') || $errors->has('email'))
+                            <div class="alert alert-danger" role="alert">
+                                @error('nib')
+                                    <strong>NIB:</strong> {{ $message }}<br>
+                                @enderror
+                                @error('name_pt')
+                                    <strong>Nama Perusahaan:</strong> {{ $message }}<br>
+                                @enderror
+                                @error('email')
+                                    <strong>Email:</strong> {{ $message }}
+                                @enderror
+                            </div>
+                        @endif
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="row mb-3">
@@ -126,7 +130,7 @@
                                             class="form-control"
                                             required autocomplete="name" autofocus
                                             placeholder="Masukkan Entitas Anda">
-                                        
+
                                     </div>
                                     <!-- <input id="nib" type="text" class="form-control @error('nib') is-invalid @enderror" placeholder = "Masukkan NIB Perusahaan Anda" name="nib" value="{{ old('nib') }}" required autocomplete="name" autofocus> -->
 
@@ -180,7 +184,29 @@
                                 <div class="col-md-8">
                                     <input id="password" type="password" placeholder="Masukkan Kata Sandi"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="new-password">
+                                        required autocomplete="new-password"
+                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}"
+                                        title="Kata sandi harus mengandung minimal 8 karakter, termasuk 1 huruf besar, 1 huruf kecil, 1 angka, and 1 karakter spesial.">
+
+                                    <div id="password-strength" class="form-text mt-1" style="display:none;">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <small id="length" class="text-danger">Minimal 8 karakter</small>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <small id="capital" class="text-danger">Minimal 1 huruf besar (A-Z)</small>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <small id="lowercase" class="text-danger">Minimal 1 huruf kecil (a-z)</small>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <small id="number" class="text-danger">Minimal 1 angka (0-9)</small>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <small id="special" class="text-danger">Minimal 1 karakter spesial</small>
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -254,6 +280,57 @@
                     $('#bootbox_custom_kominfo').attr('hidden', true);
                 }
                 console.log(nilai);
+            });
+
+            $('#password').on('focus', function() {
+                $('#password-strength').show();
+            });
+
+            $('#password').on('keyup', function() {
+                var password = $(this).val();
+
+                // Validate length
+                if (password.length >= 8) {
+                    $('#length').removeClass('text-danger').addClass('text-success').html('✔️ Minimal 8 karakter');
+                } else {
+                    $('#length').removeClass('text-success').addClass('text-danger').html('❌ Minimal 8 karakter');
+                }
+
+                // Validate capital letter
+                if (password.match(/[A-Z]/)) {
+                    $('#capital').removeClass('text-danger').addClass('text-success').html(
+                        '✔️ Minimal 1 huruf besar (A-Z)');
+                } else {
+                    $('#capital').removeClass('text-success').addClass('text-danger').html(
+                        '❌ Minimal 1 huruf besar (A-Z)');
+                }
+
+                // Validate lowercase letter
+                if (password.match(/[a-z]/)) {
+                    $('#lowercase').removeClass('text-danger').addClass('text-success').html(
+                        '✔️ Minimal 1 huruf kecil (a-z)');
+                } else {
+                    $('#lowercase').removeClass('text-success').addClass('text-danger').html(
+                        '❌ Minimal 1 huruf kecil (a-z)');
+                }
+
+                // Validate number
+                if (password.match(/[0-9]/)) {
+                    $('#number').removeClass('text-danger').addClass('text-success').html(
+                        '✔️ Minimal 1 angka (0-9)');
+                } else {
+                    $('#number').removeClass('text-success').addClass('text-danger').html(
+                        '❌ Minimal 1 angka (0-9)');
+                }
+
+                // Validate special character
+                if (password.match(/[^a-zA-Z0-9]/)) {
+                    $('#special').removeClass('text-danger').addClass('text-success').html(
+                        '✔️ Minimal 1 karakter spesial');
+                } else {
+                    $('#special').removeClass('text-success').addClass('text-danger').html(
+                        '❌ Minimal 1 karakter spesial');
+                }
             });
         });
     </script>

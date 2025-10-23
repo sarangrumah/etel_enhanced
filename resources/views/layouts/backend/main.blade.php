@@ -286,7 +286,7 @@
 
 					<div class="navbar-collapse collapse" id="navbar-footer">
 						<span class="navbar-text">
-							&copy; 2022. <a href="#">KOMINFO - eLicensing</a>
+							&copy; 2022. <a href="#">KOMINFO - e-Telekomunikasi</a>
 						</span>
 
 						<ul class="navbar-nav ml-lg-auto">

@@ -45,7 +45,8 @@
 			</div>
 		</div>
 
-		<div class="d-flex w-100 w-xl-auto overflow-auto overflow-xl-visible scrollbar-hidden border-top border-top-xl-0 order-1 order-xl-0">
+		<div
+			class="d-flex w-100 w-xl-auto overflow-auto overflow-xl-visible scrollbar-hidden border-top border-top-xl-0 order-1 order-xl-0">
 			<ul class="navbar-nav navbar-nav-underline flex-row text-nowrap mx-auto">
 				<li class="nav-item">
 					<a href="index.html" class="navbar-nav-link active">
@@ -59,7 +60,7 @@
 						<i class="icon-make-group mr-2"></i>
 						Perizinan
 					</a>
-				
+
 					<div class="dropdown-menu dropdown-scrollable-xl">
 						<a href="javascript:void(0)" class="dropdown-item rounded">Registrasi</a>
 						<div class="dropdown-divider"></div>
@@ -75,7 +76,7 @@
 						<i class="icon-strategy mr-2"></i>
 						Manajemen Perizinan
 					</a>
-				
+
 					<div class="dropdown-menu dropdown-scrollable-xl">
 						<a href="javascript:void(0)" class="dropdown-item rounded">Jasa</a>
 						<a href="javascript:void(0)" class="dropdown-item rounded">Jaringan</a>
@@ -91,7 +92,7 @@
 
 					<div class="dropdown-menu dropdown-scrollable-xl">
 						<a href="javascript:void(0)" class="dropdown-item rounded">Rekap Penomoran</a>
-						<a href="{{route('rekap-sklo')}}" class="dropdown-item rounded">Rekap SKLO</a>
+						<a href="{{ route('rekap-sklo') }}" class="dropdown-item rounded">Rekap SKLO</a>
 					</div>
 				</li>
 			</ul>
@@ -105,17 +106,21 @@
 						<span class="badge badge-mark border-pink bg-pink"></span>
 					</a>
 				</li> --}}
-		
+
 				<li class="nav-item nav-item-dropdown-xl dropdown dropdown-user h-100">
-					<a href="javascript:void(0)" class="navbar-nav-link navbar-nav-link-toggler d-flex align-items-center h-100 dropdown-toggle" data-toggle="dropdown">
-						<img src="global_assets/images/demo/users/face11.jpg" class="rounded-circle mr-xl-2" height="38" alt="">
+					<a href="javascript:void(0)"
+						class="navbar-nav-link navbar-nav-link-toggler d-flex align-items-center h-100 dropdown-toggle"
+						data-toggle="dropdown">
+						<img src="global_assets/images/demo/users/face11.jpg" class="rounded-circle mr-xl-2" height="38"
+							alt="">
 						<span class="d-none d-xl-block">Victoria</span>
 					</a>
-		
+
 					<div class="dropdown-menu dropdown-menu-right">
 						<a href="javascript:void(0)" class="dropdown-item"><i class="icon-user-plus"></i> My profile</a>
 						<a href="javascript:void(0)" class="dropdown-item"><i class="icon-coins"></i> My balance</a>
-						<a href="javascript:void(0)" class="dropdown-item"><i class="icon-comment-discussion"></i> Messages <span class="badge badge-primary badge-pill ml-auto">58</span></a>
+						<a href="javascript:void(0)" class="dropdown-item"><i class="icon-comment-discussion"></i> Messages <span
+								class="badge badge-primary badge-pill ml-auto">58</span></a>
 						<div class="dropdown-divider"></div>
 						<a href="javascript:void(0)" class="dropdown-item"><i class="icon-cog5"></i> Account settings</a>
 						<a href="javascript:void(0)" class="dropdown-item"><i class="icon-switch2"></i> Logout</a>
@@ -125,7 +130,6 @@
 		</div>
 	</div>
 	<!-- /main navbar -->
-		
 
 	<!-- Page content -->
 	<div class="page-content">
@@ -149,18 +153,17 @@
 				</div> --}}
 				<!-- /page header -->
 
-
 				<!-- Content area -->
 				<div class="content container pt-0">
 					@yield('content')
 				</div>
 				<!-- /content area -->
 
-
 				<!-- Footer -->
 				<div class="navbar navbar-expand-lg navbar-light border-bottom-0 border-top">
 					<div class="text-center d-lg-none w-100">
-						<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-footer">
+						<button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse"
+							data-target="#navbar-footer">
 							<i class="icon-unfold mr-2"></i>
 							Footer
 						</button>
@@ -168,12 +171,15 @@
 
 					<div class="navbar-collapse collapse" id="navbar-footer">
 						<span class="navbar-text">
-							&copy; 2022. <a href="javascript:void(0)">KOMINFO - eLicensing</a> by <a href="javascript:void(0)" target="_blank">URMedia</a>
+							&copy; 2022. <a href="javascript:void(0)">KOMINFO - e-Telekomunikasi</a> by <a href="javascript:void(0)"
+								target="_blank">URMedia</a>
 						</span>
 
 						<ul class="navbar-nav ml-lg-auto">
-							<li class="nav-item"><a href="https://kopyov.ticksy.com/" class="navbar-nav-link" target="_blank"><i class="icon-lifebuoy mr-2"></i> Support</a></li>
-							<li class="nav-item"><a href="https://demo.interface.club/limitless/docs/" class="navbar-nav-link" target="_blank"><i class="icon-file-text2 mr-2"></i> Docs</a></li>
+							<li class="nav-item"><a href="https://kopyov.ticksy.com/" class="navbar-nav-link" target="_blank"><i
+										class="icon-lifebuoy mr-2"></i> Support</a></li>
+							<li class="nav-item"><a href="https://demo.interface.club/limitless/docs/" class="navbar-nav-link"
+									target="_blank"><i class="icon-file-text2 mr-2"></i> Docs</a></li>
 						</ul>
 					</div>
 				</div>
@@ -188,14 +194,14 @@
 	</div>
 	<!-- /page content -->
 
-
 	<!-- Notifications -->
 	<div id="notifications" class="modal modal-right fade" tabindex="-1" aria-modal="true" role="dialog">
 		<div class="modal-dialog modal-dialog-scrollable modal-lg">
 			<div class="modal-content">
 				<div class="modal-header bg-transparent border-0 align-items-center">
 					<h5 class="modal-title font-weight-semibold">Notifications</h5>
-					<button type="button" class="btn btn-icon btn-light btn-sm border-0 rounded-pill ml-auto" data-dismiss="modal"><i class="icon-cross2"></i></button>
+					<button type="button" class="btn btn-icon btn-light btn-sm border-0 rounded-pill ml-auto"
+						data-dismiss="modal"><i class="icon-cross2"></i></button>
 				</div>
 
 				<div class="modal-body p-0">
@@ -203,10 +209,12 @@
 					<div class="p-3">
 						<div class="d-flex mb-3">
 							<a href="javascript:void(0)" class="mr-3">
-								<img src="global_assets/images/demo/users/face1.jpg" width="36" height="36" class="rounded-circle" alt="">
+								<img src="global_assets/images/demo/users/face1.jpg" width="36" height="36" class="rounded-circle"
+									alt="">
 							</a>
 							<div class="flex-1">
-								<a href="javascript:void(0)" class="font-weight-semibold">James</a> has completed the task <a href="javascript:void(0)">Submit documents</a> from <a href="javascript:void(0)">Onboarding</a> list
+								<a href="javascript:void(0)" class="font-weight-semibold">James</a> has completed the task <a
+									href="javascript:void(0)">Submit documents</a> from <a href="javascript:void(0)">Onboarding</a> list
 
 								<div class="bg-light border rounded p-2 mt-2">
 									<label class="custom-control custom-checkbox custom-control-inline mx-1">
@@ -221,10 +229,13 @@
 
 						<div class="d-flex mb-3">
 							<a href="javascript:void(0)" class="mr-3">
-								<img src="global_assets/images/demo/users/face3.jpg" width="36" height="36" class="rounded-circle" alt="">
+								<img src="global_assets/images/demo/users/face3.jpg" width="36" height="36" class="rounded-circle"
+									alt="">
 							</a>
 							<div class="flex-1">
-								<a href="javascript:void(0)" class="font-weight-semibold">Margo</a> was added to <span class="font-weight-semibold">Customer enablement</span> channel by <a href="javascript:void(0)">William Whitney</a>
+								<a href="javascript:void(0)" class="font-weight-semibold">Margo</a> was added to <span
+									class="font-weight-semibold">Customer enablement</span> channel by <a href="javascript:void(0)">William
+									Whitney</a>
 
 								<div class="font-size-sm text-muted mt-1">3 hours ago</div>
 							</div>
@@ -237,7 +248,8 @@
 								</div>
 							</div>
 							<div class="flex-1">
-								Subscription <a href="javascript:void(0)">#466573</a> from 10.12.2021 has been cancelled. Refund case <a href="javascript:void(0)">#4492</a> created
+								Subscription <a href="javascript:void(0)">#466573</a> from 10.12.2021 has been cancelled. Refund case <a
+									href="javascript:void(0)">#4492</a> created
 
 								<div class="font-size-sm text-muted mt-1">4 hours ago</div>
 							</div>
@@ -248,10 +260,12 @@
 					<div class="p-3">
 						<div class="d-flex mb-3">
 							<a href="javascript:void(0)" class="mr-3">
-								<img src="global_assets/images/demo/users/face4.jpg" width="36" height="36" class="rounded-circle" alt="">
+								<img src="global_assets/images/demo/users/face4.jpg" width="36" height="36" class="rounded-circle"
+									alt="">
 							</a>
 							<div class="flex-1">
-								<a href="javascript:void(0)" class="font-weight-semibold">Christine</a> commented on your community <a href="javascript:void(0)">post</a> from 10.12.2021
+								<a href="javascript:void(0)" class="font-weight-semibold">Christine</a> commented on your community <a
+									href="javascript:void(0)">post</a> from 10.12.2021
 
 								<div class="font-size-sm text-muted mt-1">2 days ago</div>
 							</div>
@@ -259,10 +273,12 @@
 
 						<div class="d-flex mb-3">
 							<a href="javascript:void(0)" class="mr-3">
-								<img src="global_assets/images/demo/users/face24.jpg" width="36" height="36" class="rounded-circle" alt="">
+								<img src="global_assets/images/demo/users/face24.jpg" width="36" height="36" class="rounded-circle"
+									alt="">
 							</a>
 							<div class="flex-1">
-								<a href="javascript:void(0)" class="font-weight-semibold">Mike</a> added 1 new file(s) to <a href="javascript:void(0)">Product management</a> project
+								<a href="javascript:void(0)" class="font-weight-semibold">Mike</a> added 1 new file(s) to <a
+									href="javascript:void(0)">Product management</a> project
 
 								<div class="bg-light rounded p-2 mt-2">
 									<div class="d-flex align-items-center mx-1">
@@ -274,7 +290,8 @@
 											<div class="font-size-sm text-muted">112KB</div>
 										</div>
 										<div class="ml-2">
-											<a href="javascript:void(0)" class="btn btn-dark-100 text-body btn-icon btn-sm border-transparent rounded-pill">
+											<a href="javascript:void(0)"
+												class="btn btn-dark-100 text-body btn-icon btn-sm border-transparent rounded-pill">
 												<i class="icon-arrow-down8"></i>
 											</a>
 										</div>
@@ -300,10 +317,12 @@
 
 						<div class="d-flex mb-3">
 							<a href="javascript:void(0)" class="mr-3">
-								<img src="global_assets/images/demo/users/face25.jpg" width="36" height="36" class="rounded-circle" alt="">
+								<img src="global_assets/images/demo/users/face25.jpg" width="36" height="36" class="rounded-circle"
+									alt="">
 							</a>
 							<div class="flex-1">
-								<a href="javascript:void(0)" class="font-weight-semibold">Nick</a> requested your feedback and approval in support request <a href="javascript:void(0)">#458</a>
+								<a href="javascript:void(0)" class="font-weight-semibold">Nick</a> requested your feedback and approval in
+								support request <a href="javascript:void(0)">#458</a>
 
 								<div class="font-size-sm text-muted mt-1">3 days ago</div>
 							</div>
@@ -329,4 +348,5 @@
 	<!-- /notifications -->
 
 </body>
+
 </html>

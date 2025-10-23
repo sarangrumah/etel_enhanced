@@ -31,20 +31,32 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function stores(Request $request)
+    public function store(Request $request)
     {
-        // dd($request);
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => [
+                'required',
+                'confirmed',
+                Rules\Password::min(8)
+                    ->letters()
+                    ->mixedCase()
+                    ->numbers()
+                    ->symbols()
+            ],
+            'jenis_pu' => ['required', 'string', 'max:10'],
+            'nib' => ['nullable', 'string', 'max:255', 'unique:users,nib'],
+            'name_pt' => ['nullable', 'string', 'max:255', 'unique:users,name_pt'],
         ]);
-        // DB::beginTransaction();
-        // try {
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'jenis_pu' => $request->jenis_pu,
+            'nib' => $request->nib,
+            'name_pt' => $request->name_pt,
         ]);
         // DB::commit();
         // } catch (\Exception $e) {
