@@ -7,8 +7,8 @@ use App\Models\Question;
 use App\Models\Survey;
 use App\Models\Responder;
 use App\Models\ResponderQuestion;
-use DB;
-use Session;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 
 class SurveyController extends Controller
 {
@@ -53,7 +53,7 @@ class SurveyController extends Controller
 
         $user_survey = DB::table('tb_mst_user_survey')->where('id_izin', '=', Session::get('id_izin'))->first();
         $requestData['id_tb_mst_user_survey'] = $user_survey->id;
-        
+
         Responder::create($requestData);
 
         // $survey = DB::table('tb_mst_survey')->where('is_active', '=', 1)->where('category', '=', 1)->where('jenis_perizinan', '=', Session::get('jenis_perizinan'))->first();
@@ -64,11 +64,14 @@ class SurveyController extends Controller
     public function form($survey_cat)
     {
         $survey = DB::table('tb_mst_survey')->where('is_active', '=', 1)->where('category', '!=', $survey_cat)->where('jenis_perizinan', '=', Session::get('jenis_perizinan'))->first();
-        
+
         $question = Survey::select('tb_map_question.id as id_map', 'tb_mst_survey.survey_name', 'tb_mst_survey.survey_desc', 'tb_mst_survey.category as cat', 'tb_mst_question.*', 'tb_mst_rq.*', 'unsur_name')
                     ->leftJoin('tb_map_question', 'tb_mst_survey.id', '=', 'tb_map_question.id_tb_mst_survey')
                     ->leftJoin('tb_mst_question', 'tb_map_question.id_tb_mst_question', '=', 'tb_mst_question.id')
-                    ->leftJoin('tb_mst_rq', 'tb_map_question.id', '=', DB::raw('tb_mst_rq.id_tb_map_sq AND tb_mst_rq.id_izin = "' . Session::get('id_izin').'"'))
+                    ->leftJoin('tb_mst_rq', function ($join) {
+                        $join->on('tb_map_question.id', '=', 'tb_mst_rq.id_tb_map_sq')
+                            ->where('tb_mst_rq.id_izin', '=', Session::get('id_izin'));
+                    })
                     ->leftJoin('tb_mst_unsur', 'tb_mst_question.unsur', '=', 'tb_mst_unsur.id')
                     ->where('tb_mst_survey.category', '=', $survey_cat)
                     ->where('tb_mst_survey.is_active', '=', 1)

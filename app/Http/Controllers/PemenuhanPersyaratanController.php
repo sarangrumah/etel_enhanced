@@ -31,10 +31,12 @@ use App\Models\Admin\IzinPrinsip;
 use App\Models\Admin\Ulo;
 use App\Models\TrxIzinPrinsip;
 use App\Models\TrxPemenuhanSyarat;
-use Session;
-use Config;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Config;
 use Carbon\Carbon;
-use PhpParser\Node\Stmt\TryCatch;
+use Illuminate\Support\Facades\Cache;
+use App\Jobs\ProcessFileUpload;
+use App\Jobs\SendEmailNotification;
 
 class PemenuhanPersyaratanController extends Controller
 {
@@ -92,11 +94,13 @@ class PemenuhanPersyaratanController extends Controller
         $map_izin = array();
         $filled_persyaratan = array();
 
-        $mst_kode_izin = DB::table('tb_mst_izinlayanan')->select('id', 'kode_izin', 'name')->where(
-            'kode_izin',
-            '=',
-            $kd_izin
-        )->first();
+        $mst_kode_izin = Cache::remember('mst_kode_izin_' . $kd_izin, 60, function () use ($kd_izin) {
+            return DB::table('tb_mst_izinlayanan')->select('id', 'kode_izin', 'name')->where(
+                'kode_izin',
+                '=',
+                $kd_izin
+            )->first();
+        });
         $id_mst_izinlayanan = $mst_kode_izin->id;
 
         $map_izin = $common->get_map_izin($id_mst_izinlayanan);
@@ -131,7 +135,9 @@ class PemenuhanPersyaratanController extends Controller
 
         $penanggungjawab = array();
         $penanggungjawab = $common->get_pj_nib($nib);
-        $cities = DB::table('tb_mst_kabupaten')->select('id', 'name')->get();
+        $cities = Cache::remember('cities', 60, function () {
+            return DB::table('tb_mst_kabupaten')->select('id', 'name')->get();
+        });
         $triger = Session::get('id_mst_jobposition');
         // dd($triger);
         // die;
@@ -260,31 +266,18 @@ class PemenuhanPersyaratanController extends Controller
     public function submitpersyaratan(Request $req)
     {
         // dd($req->all(),$req->id_izin);
-        // $this->validate($req, [
-        //     'syarat.*' => 'pdf'
-        // ]);
+        $this->validate($req, [
+            'syarat.*' => 'required|mimes:pdf|max:2048',
+        ]);
         // dump(count($req->file('konfigurasi_teknis')));
         DB::beginTransaction();
         // try {
             $insert = array();
             if ($req->hasfile('syarat')) {
                 foreach ($req->file('syarat') as $key => $file) {
-                    $filename = "KOMINFO-" . time() . $key . '.' . $file->extension();
-                    // $filename = $file->getClientOriginalName() . $key . '.' . $file->extension();
-                    $path = $file->storeAs('public/file_syarat', $filename);
-                    $name = $file->getClientOriginalName();
-                    $path = str_replace('public/', 'storage/', $path);
-                    // dd($req);
-                    $insert[] = array(
-                        'id_trx_izin' => $req->id_izin,
-                        'id_map_listpersyaratan' => $req->id_maplist[$key],
-                        'filled_document' => $path,
-                        // 'uraian' => $req->persyaratan[$key],
-                        // 'jenis_isian' => 'pdf',
-                        'nama_file_asli' => $filename,
-                        'created_by' => Auth::user()->name,
-                        'is_active' => '1'
-                    );
+                    $fileContent = $file->get();
+                    $originalName = $file->getClientOriginalName();
+                    ProcessFileUpload::dispatch($fileContent, $originalName, $req->id_izin, $req->id_maplist[$key], Auth::user()->name);
                 }
             }
 
@@ -294,7 +287,6 @@ class PemenuhanPersyaratanController extends Controller
             $id_departemen_user = Session::get('id_departemen');
             // dd(Session::get('id_departemen'));
             $departemen = $common->getDepartemen($id_departemen_user);
-            $fileUpload = DB::table('tb_trx_persyaratan')->insert($insert);
             $jenis_izin = Izin::where('id_izin', $req->id_izin)->first();
             // dd($jenis_izin);
             $izins = $jenis_izin->toArray();
@@ -311,7 +303,7 @@ class PemenuhanPersyaratanController extends Controller
                 if($izins['kd_izin'] == '059000030066'){
                     $izin = Izin_oss::where('id_izin', $req->id_izin)
                     ->update(['status_checklist' => '22', 'submitted_at' => date('Y-m-d H:i:s')]);
-                    
+
                 }elseif($izins['kd_izin'] == '059000020066'){
                     $izin = Izin_oss::where('id_izin', $req->id_izin)
                     ->update(['status_checklist' => '23', 'submitted_at' => date('Y-m-d H:i:s')]);
@@ -322,7 +314,7 @@ class PemenuhanPersyaratanController extends Controller
                     $izin = Izin_oss::where('id_izin', $req->id_izin)
                     ->update(['status_checklist' => '21', 'submitted_at' => date('Y-m-d H:i:s')]);
                 }
-                
+
             } else {
                 $izin = Izin_oss::where('id_izin', $req->id_izin)
                     ->update(['status_checklist' => '20', 'submitted_at' => date('Y-m-d H:i:s')]);
@@ -591,10 +583,10 @@ class PemenuhanPersyaratanController extends Controller
             // $jenis_izin = Izin::where('id_izin', $req->id_izin)->first();
             // // dd($jenis_izin);
             $izins = Izin::where('id_izin', $req->id_izin)->first();
-            
+
             // dd($izins);
             // dd($penanggungjawab,$email_jenis,$izins,$departemen,$catatan_hasil_evaluasi,$nama2,$nibs,$koreksi_all);
-            $kirim_email = $email->kirim_email($penanggungjawab, $email_jenis, $izins, $departemen, $catatan_hasil_evaluasi, $nama2, $nibs, $koreksi_all);
+            SendEmailNotification::dispatch($penanggungjawab, $email_jenis, $izins, $departemen, $catatan_hasil_evaluasi, $nama2, $nibs, $koreksi_all);
             //end penganggungjawab
 
             //kirim email koordinator
@@ -616,7 +608,7 @@ class PemenuhanPersyaratanController extends Controller
             $catatan_hasil_evaluasi = '';
             // dd($user,$email_jenis,$izins,$departemen,$catatan_hasil_evaluasi,$nama2,$nibs,$koreksi_all,$jabatan);
             //end mengirim email ke koordinator
-            $kirim_email2 = $email->kirim_email2($user, $email_jenis, $izins, $departemen, $catatan_hasil_evaluasi, $nama2, $nibs, $koreksi_all, $jabatan);
+            SendEmailNotification::dispatch(null, $email_jenis, $izins, $departemen, $catatan_hasil_evaluasi, $nama2, $nibs, $koreksi_all, $user, $jabatan);
 
 
             if ($izin) {
@@ -804,7 +796,7 @@ class PemenuhanPersyaratanController extends Controller
     }
 
     public function submitperpanjanganiptelsus($id)
-    {   
+    {
         $oss_id = Auth::user()->oss_id;
         $email = new EmailHelper();
         $common = new CommonHelper();
@@ -822,17 +814,17 @@ class PemenuhanPersyaratanController extends Controller
             } else {
                 $maxId = substr($oss_id, 0, 3) . '-' . date('Ymd') . sprintf("%05s", 1);
             }
-        
+
             $oss_nib = DB::table('tb_oss_nib')->select('*')->where('oss_id', $oss_id)->first();
-        
+
             // dd($oss_nib);
-        
+
             $kbli = DB::table('tb_mst_kbli')->select('*')->where('id', '=', '14')->first();
-        
+
             $izin_layanan = DB::table('tb_mst_izinlayanan')->select('*')->where('id', '=', '49')->first();
             // dd($izin_layanan);
             $jenis_izin = 'K02';
-        
+
             // $pre_izinprinsip = Izinoss::select('*')->where('id_izin','=',$id)->first();
             // $pre_izinprinsip->iterasi_perpanjangan = 1;
             // $pre_izinprinsip->updated_date = date('Y-m-d H:i:s');
@@ -848,8 +840,8 @@ class PemenuhanPersyaratanController extends Controller
                 // 'id_produk' => $id,
                 'id_proyek' => $id,
             ]);
-        
-        
+
+
             $insert->save();
 
             // $maxNoUlo = Ulo::where('nomor_sklo', 'LIKE', '%TEL.03.%')->get()->count();
@@ -911,20 +903,20 @@ class PemenuhanPersyaratanController extends Controller
             } else {
                 $maxId = substr($oss_id, 0, 3) . '-' . date('Ymd') . sprintf("%05s", 1);
             }
-        
+
             $oss_nib = DB::table('tb_oss_nib')->select('*')->where('oss_id', $oss_id)->first();
-        
+
             // dd($oss_nib);
-        
+
             $kbli = DB::table('tb_mst_kbli')->select('*')->where('id', '=', '14')->first();
-        
+
             $izin_layanan = DB::table('tb_mst_izinlayanan')->select('*')->where('id', '=', '47')->first();
-        
+
             $jenis_izin = 'K02';
 
             $parentizin = Izinoss::select('*')->where('id_izin','=',$id)->first();
             // dd($parentizin['id_proyek']);
-        
+
             $insert = new Izinoss([
                 'oss_id' => $oss_id,
                 'id_izin' => $maxId,
@@ -934,14 +926,14 @@ class PemenuhanPersyaratanController extends Controller
                 'status_checklist' => '03',
                 'id_proyek' => $parentizin['id_proyek'],
             ]);
-        
-        
+
+
             $insert->save();
-        
+
             return redirect('/')->with('message', 'Permohonan baru berhasil ditambahkan, silahkan lakukan pemenuhan persyaratan');
         }
 
-        
+
     }
 
     public function submitpersyaratanizintelsus_return($id)
@@ -1007,9 +999,9 @@ class PemenuhanPersyaratanController extends Controller
             return redirect('/')->with('message', 'Permohonan baru berhasil ditambahkan, silahkan lakukan pemenuhan
             persyaratan');
             }
-        
+
         // }
 
-        
+
     }
 }

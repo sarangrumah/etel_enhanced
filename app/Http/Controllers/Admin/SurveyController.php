@@ -12,9 +12,9 @@ use App\Models\Admin\UserSurvey;
 use App\Models\Admin\Izin;
 use App\Helpers\DateHelper;
 use App\Helpers\IzinHelper;
-use DB;
-use Session;
-use Config;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Config;
 
 class SurveyController extends Controller
 {
@@ -30,7 +30,7 @@ class SurveyController extends Controller
     public function index()
     {
         $survey = Survey::orderBy('id', 'ASC')->get();
-        
+
         return response()->view('admin.survey.mgmt-surveycampaign', compact('survey'));
     }
 
@@ -54,7 +54,7 @@ class SurveyController extends Controller
     {
         $this->_validate($request);
         $requestData = $request->all();
-        
+
         Survey::create($requestData);
 
         return redirect('/admin/svmgmt');
@@ -74,7 +74,7 @@ class SurveyController extends Controller
             $join->on('tb_mst_question.id', '=', 'tb_map_question.id_tb_mst_question');
             $join->on('tb_map_question.id_tb_mst_survey', '=', DB::RAW($id));
         })->orderBy(DB::RAW("-tb_map_question.id"), "DESC")->get();
-        
+
         return response()->view('admin.survey.mgmt-mapsurveyquestion', compact('id', 'survey', 'question'));
     }
 
@@ -106,7 +106,7 @@ class SurveyController extends Controller
             //throw $th;
             return redirect('/admin/svmgmt')->with('success', 'Gagal');
         }
-        
+
     }
 
     /**
@@ -207,7 +207,10 @@ class SurveyController extends Controller
         $question = Survey::select('tb_map_question.id as id_map', 'tb_mst_survey.survey_name', 'tb_mst_survey.survey_desc', 'tb_mst_survey.category', 'tb_mst_survey.category as cat', 'tb_mst_question.*', 'tb_mst_rq.*', 'unsur_name')
         ->leftJoin('tb_map_question', 'tb_mst_survey.id', '=', 'tb_map_question.id_tb_mst_survey')
         ->leftJoin('tb_mst_question', 'tb_map_question.id_tb_mst_question', '=', 'tb_mst_question.id')
-        ->leftJoin('tb_mst_rq', 'tb_map_question.id', '=', DB::raw('tb_mst_rq.id_tb_map_sq AND tb_mst_rq.id_izin = "' . Session::get('id_izin') . '"'))
+        ->leftJoin('tb_mst_rq', function ($join) {
+            $join->on('tb_map_question.id', '=', 'tb_mst_rq.id_tb_map_sq')
+                ->where('tb_mst_rq.id_izin', '=', Session::get('id_izin'));
+        })
         ->leftJoin('tb_mst_unsur', 'tb_mst_question.unsur', '=', 'tb_mst_unsur.id')
         ->where('tb_mst_survey.id', '=', $survey_id)
         // ->where('tb_mst_survey.is_active', '=', 1)
