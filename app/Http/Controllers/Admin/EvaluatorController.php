@@ -49,7 +49,7 @@ use Illuminate\Validation\ValidationException;
 class EvaluatorController extends Controller
 {
     //
-    
+
     public function getKabupaten(Request $req)
     {
         // dd($req);
@@ -69,7 +69,7 @@ class EvaluatorController extends Controller
     {
         $date_reformat = new DateHelper();
         $log= new LogHelper();
-        $log->createLog('Akses Dashboard');
+        $log->createLog('akses', 'Akses Dashboard');
 
         $id_departemen_user = Session::get('id_departemen');
         if ($id_departemen_user == 1) {
@@ -121,7 +121,7 @@ class EvaluatorController extends Controller
             $izin = $izin->get();
         }
 
-        //getcountiizin 
+        //getcountiizin
         // $countdisposisi = IzinHelper::countIzin($status_checklist, $id_departemen_user);
         $countdisposisi = $izin->count();
         // dd($countdisposisi);
@@ -161,7 +161,7 @@ class EvaluatorController extends Controller
             $izin = $izin->get();
         }
 
-        //getcountiizin 
+        //getcountiizin
         // $countdisposisi = IzinHelper::countIzin($status_checklist, $id_departemen_user);
         $countdisposisi = $izin->count();
         $paginate = $izin;
@@ -199,7 +199,7 @@ class EvaluatorController extends Controller
             $izin = $izin->get();
         }
 
-        //getcountiizin 
+        //getcountiizin
         // $countdisposisi = IzinHelper::countIzin($status_checklist, $id_departemen_user);
         $countdisposisi = $izin->count();
         $paginate = $izin;
@@ -244,7 +244,7 @@ class EvaluatorController extends Controller
             $izin = $izin->get();
         }
 
-        //getcountiizin 
+        //getcountiizin
         // $countdisposisi = IzinHelper::countIzin($status_checklist, $id_departemen_user);
         $countdisposisi = $izin->count();
         // dd($countdisposisi);
@@ -398,7 +398,7 @@ class EvaluatorController extends Controller
             // ->whereIn('status_checklist', [44, 801, 901])
             ->first();
 
-        // dd($izin);  
+        // dd($izin);
 
 
         $status_checklist = $izin->status_checklist;
@@ -657,7 +657,7 @@ class EvaluatorController extends Controller
         // }
         // $izin = $izin->get();
 
-        //getcountiizin 
+        //getcountiizin
         // $countdisposisi = IzinHelper::countIzin($status_checklist, $id_departemen_user);
         $countdisposisi = $izin->count();
         // $paginate = $izin;
@@ -976,7 +976,7 @@ class EvaluatorController extends Controller
 
                 $uloSave->save();
 
-                // $insertUloLog = Ulolog::create($uloToLog); 
+                // $insertUloLog = Ulolog::create($uloToLog);
 
             }
         } else {
@@ -1061,7 +1061,7 @@ class EvaluatorController extends Controller
             // dd($uloSave);
             $uloSave->save();
 
-            
+
             if (substr($id, 0, 3) == 'TKI') {
             $ip_idproyek = DB::table('tb_trx_ulo')
                 ->join('tb_oss_trx_izin as b', 'b.id_izin', '=', 'tb_trx_ulo.id_izin')
@@ -1098,7 +1098,7 @@ class EvaluatorController extends Controller
             }
             }
 
-            // $insertUloLog = Ulolog::create($uloToLog); 
+            // $insertUloLog = Ulolog::create($uloToLog);
 
         }
         // dd($uloSave);
@@ -1132,7 +1132,7 @@ class EvaluatorController extends Controller
         // $licenseStatus = $osshub->updateIzin($izin_status);
 
         DB::commit();
-        // 
+        //
         session()->flash('message', 'Berhasil Menyimpan Hasil Evaluasi');
         return Redirect::back();
         // } catch (\Exception $e) {
@@ -1211,7 +1211,7 @@ class EvaluatorController extends Controller
         //     $koreksi_all = 1;
         // }
         $Izinoss = Izinoss::where('id_izin', '=', $id)->first(); //set status checklist telah didisposisi
-        
+
         if(isset($request->status_laik)){
             if ($request->status_laik == 1) {
                 if (substr($uloSave['id_izin'], 0, 3) != 'TKI') {
@@ -1760,7 +1760,7 @@ class EvaluatorController extends Controller
         $ulo = $ulo->toArray();
         // $catatan = ->status_laik;
         $Izinoss = Izinoss::where('id_izin', '=', $id)->first(); //set status checklist telah didisposisi
-        
+
         // dd($Izinoss);
         if ($Izinoss == null) {
         return abort(404);
@@ -1856,7 +1856,7 @@ class EvaluatorController extends Controller
         $catatan = $catatan_hasil_evaluasi;
         //insert log
         $insertUloLog = $log->createUloLog($uloToLog, $catatan, $status_ulo);
-        
+
         function tgl_indo($tanggal)
         {
             $pecahkan = explode('-', $tanggal);
@@ -2204,7 +2204,7 @@ class EvaluatorController extends Controller
         $countevaluasi = $penomoran->clone()->where(function ($q) {
             $q->where('t.status_permohonan', '=', 901);
         })->get()->count();
-        //getcountiizin 
+        //getcountiizin
         // IzinHelper::countPenomoran($status_penomoran,$id_departemen_user);
         $jenis_izin = 'Izin Penyelenggaraan Penomoran Telekomunikasi';
         // dd($countevaluasi);
@@ -3360,8 +3360,8 @@ class EvaluatorController extends Controller
                 $jenis_izin = 'K03';
                 $msg_success = 'Permohonan sudah berhasil disimpan dan akan dilakukan verifikasi.';
                 $msg_failed = 'Mohon maaf permohonan penomoran tidak dapat diajukan, karena terdapat permohonan yang masih  belum selesai dengan jenis permohonan kode akses yang sama';
-                
-                // dd('1');       
+
+                // dd('1');
                 $insert = new Izinoss([
                     // 'oss_id' => $oss_id,
                     'id_proyek' => $id_jeniskodeakses->short_name,
@@ -3521,9 +3521,9 @@ class EvaluatorController extends Controller
             //     DB::rollback();
             //     throw ValidationException::withMessages(['message' => 'Gagal']);
             // }
-            
-            
-        } 
+
+
+        }
     }
 
     public function evaluasiPenomoranSave($id, $id_kodeakses, Request $request)
@@ -3969,14 +3969,14 @@ class EvaluatorController extends Controller
         $limit_db = Config::get('app.admin.limit');
         $id_departemen_user = Session::get('id_departemen');
         $id_jabatan = Session::get('id_departemen');
-        
+
         $id_izin = $request->id;
         // dd($id_izin);
 
         $izin = Izin::where('status_checklist', '=', 10)->where('id_master_izin','=',$id_jabatan)->where('id_izin','=',$id_izin)->first();
-        
+
         $datasyaratpdf = DB::table('vw_persyaratan_izin as a')->select('a.*', 'd.need_correction', 'd.nama_file_asli', 'd.correction_note', 'd.filled_document')
-        ->leftjoin('tb_trx_persyaratan as d', 
+        ->leftjoin('tb_trx_persyaratan as d',
         function($join)
                          {
                              $join->on('d.id_map_listpersyaratan', '=', 'a.id_maplist');
@@ -4016,7 +4016,7 @@ class EvaluatorController extends Controller
         $map_izin = array();
         $filled_persyaratan = array();
 
-        // dd($ulo['kode_izin']);   
+        // dd($ulo['kode_izin']);
 
 
         $mst_kode_izin = DB::table('tb_mst_izinlayanan')->select('id', 'kode_izin', 'name')->where('kode_izin', '=', $izin->kd_izin)->first();
@@ -4055,7 +4055,7 @@ class EvaluatorController extends Controller
         $jenis_izin = Izin::where('id_izin', $req->id_izin)->first();
         $jenis_izin = $jenis_izin->nama_master_izin;
         $datenow = Carbon::now();
-        
+
         if (isset($req->rencanausaha)) {
             $updateRencanaUsaha = [
                 'id_trx_izin' => $req->id_izin,
@@ -4073,8 +4073,8 @@ class EvaluatorController extends Controller
                 ->where('id_trx_izin', '=', $req->id_izin)
                 ->update($updateRencanaUsaha);
         }
-        
-        
+
+
         // store rolloutplan
         if (isset($req->rolloutplan)) {
             $updateRollOutPlan = [
@@ -4140,7 +4140,7 @@ class EvaluatorController extends Controller
         //     session()->flash('message', 'Submit Persyaratan Tidak Berhasil.');
         //     return redirect()->route('home')->with('failed', 'Data Your files has been failed');
         // }
-        
+
     }
 
     // public function evaluasiPenyesuaian($id, Request $request)

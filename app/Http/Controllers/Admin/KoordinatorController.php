@@ -58,7 +58,7 @@ class KoordinatorController extends Controller
         $date_reformat = new DateHelper();
         $id_departemen_user = Session::get('id_departemen');
         $log= new LogHelper();
-        $log->createLog('Akses Dashboard');
+        $log->createLog('akses', 'Akses Dashboard');
 
         if ($id_departemen_user == 1) {
             return Redirect::route('admin.koordinator.jasa');
@@ -102,7 +102,7 @@ class KoordinatorController extends Controller
         //     $q->where('status_checklist','=',903);
         // })->get()->count();
         // dd($izin);]
-        //getcountiizin 
+        //getcountiizin
         $countdisposisi = IzinHelper::countIzin(20, $id_departemen_user);
         // $countdisposisi = $izin->where('status_checklist','=',20)->count();
         $countpersetujuan = IzinHelper::countIzin(903, $id_departemen_user);
@@ -151,7 +151,7 @@ class KoordinatorController extends Controller
         //     $q->where('status_checklist','=',903);
         // })->get()->count();
 
-        //getcountiizin 
+        //getcountiizin
         $countdisposisi = IzinHelper::countIzin(20, $id_departemen_user);
         $countpersetujuan = IzinHelper::countIzin(903, $id_departemen_user);
 
@@ -198,7 +198,7 @@ class KoordinatorController extends Controller
         //     $q->where('status_checklist','=',903);
         // })->get()->count();
 
-        //getcountiizin 
+        //getcountiizin
         $countdisposisi = IzinHelper::countIzin(20, $id_departemen_user);
         $countdisposisi = $countdisposisi + IzinHelper::countIzin(21, $id_departemen_user);
         $countdisposisi = $countdisposisi + IzinHelper::countIzin(22, $id_departemen_user);
@@ -320,7 +320,7 @@ class KoordinatorController extends Controller
             ]);
 
             $kirim_email = $email->kirim_email_invitation($meeting_detail, $email_pemohon_array, $formattedStartDateTime, $formattedEndDateTime);
-        
+
 
             DB::commit();
 
@@ -340,7 +340,7 @@ class KoordinatorController extends Controller
         // $user = $user->join('users','users.id','=','tb_oss_user.no_id_user_proses');
         // $user = $user->join('tb_oss_nib','users.oss_id','=','tb_oss_nib.oss_id');
         // $user = $user->join('tb_trx_regisip','tb_oss_user.nib','=','tb_trx_regisip.id_inb');
-        // $user = $user->join('tb_oss_mst_jenisperseroan','tb_oss_nib.jenis_perseroan','=','tb_oss_mst_jenisperseroan.oss_kode');   
+        // $user = $user->join('tb_oss_mst_jenisperseroan','tb_oss_nib.jenis_perseroan','=','tb_oss_mst_jenisperseroan.oss_kode');
         // $user = $user->leftjoin('tb_mst_provinsi','tb_mst_provinsi.id','=','tb_oss_user.id_provinsi');
         // $user = $user->leftjoin('tb_mst_kabupaten','tb_mst_kabupaten.id','=','tb_oss_user.id_kota');
         // $user = $user->leftjoin('tb_mst_kecamatan','tb_mst_kecamatan.id','=','tb_oss_user.id_kecamatan');
@@ -357,7 +357,7 @@ class KoordinatorController extends Controller
         // $user_pt = $user_pt->join('users','tb_oss_nib.oss_id','=','users.oss_id');
         // $user_pt = $user_pt->join('tb_oss_user','tb_oss_user.no_id_user_proses','=','users.id');
         // $user_pt = $user_pt->join('tb_trx_regisip','tb_oss_nib.nib','=','tb_trx_regisip.id_inb');
-        // $user_pt = $user_pt->join('tb_oss_mst_jenisperseroan','tb_oss_nib.jenis_perseroan','=','tb_oss_mst_jenisperseroan.oss_kode'); 
+        // $user_pt = $user_pt->join('tb_oss_mst_jenisperseroan','tb_oss_nib.jenis_perseroan','=','tb_oss_mst_jenisperseroan.oss_kode');
         $user_pt = $user_pt->first();
         // $user = $user->toArray();
         if (empty($user)) {
@@ -365,9 +365,9 @@ class KoordinatorController extends Controller
         }
 
         $test = 'test';
-        
+
         $vw_pelaku_usaha = DB::table('vw_pelaku_usaha')->where('id', $id)->first();
-        // dd($vw_pelaku_usaha); 
+        // dd($vw_pelaku_usaha);
 
         return view('layouts.backend.evaluator-evaluasi-register', ['date_reformat' => $date_reformat, 'user' => $user, 'user_pt' => $user_pt, 'id' => $id, 'vw_pelaku_usaha' => $vw_pelaku_usaha]);
     }
@@ -434,11 +434,11 @@ class KoordinatorController extends Controller
         DB::beginTransaction();
         // try {
             if (isset($data['idchange_nib_'])) {
-                
+
                 $detailpj = DB::table('tb_oss_user')->select('*')->where('id', '=', $id)->update([
                     'nib' => $data['idchange_nib_']
                 ]);
-                
+
                 $detailnib = DB::table('tb_oss_nib')->select('*')->where('nib', '=', $user->nib)->update([
                     'nib' => $data['idchange_nib_'],
                     'status_nib' => $status_nib
@@ -450,11 +450,11 @@ class KoordinatorController extends Controller
 
             }
             if (isset($data['idchange_email_'])) {
-                
+
                 $detailpj = DB::table('tb_oss_user')->select('*')->where('id', '=', $id)->update([
                     'email_user_proses' => $data['idchange_email_']
                 ]);
-                
+
                 $detailnib = DB::table('tb_oss_nib')->select('*')->where('nib', '=', $user->nib)->update([
                     'email_perusahaan' => $data['idchange_email_'],
                     'status_nib' => $status_nib
@@ -1107,7 +1107,7 @@ class KoordinatorController extends Controller
         //     $q->where('status_checklist','=',903);
         // })->get()->count();
         // dd($izin);]
-        //getcountiizin 
+        //getcountiizin
         $countdisposisi = IzinHelper::countIzin(20, $id_departemen_user);
         // $countdisposisi = $izin->where('status_checklist','=',20)->count();
         $countpersetujuan = IzinHelper::countIzin(903, $id_departemen_user);
@@ -1169,7 +1169,7 @@ class KoordinatorController extends Controller
         $izin =
             Izin::select('*')->where('id_izin', '=', $id)
             ->whereIn('status_checklist', [20, 21, 22, 23, 24, 901, 801, 701])->first();
-                
+
         if (empty($izin)) {
             return abort(404);
         }
@@ -1518,7 +1518,7 @@ class KoordinatorController extends Controller
         $ulo = $ulo->view_ulo($id_departemen_user, $urut, $id_jabatan);
         // dd($ulo);
 
-        // dd($izin);  
+        // dd($izin);
         // $status_checklist = $izin->status_checklist;
 
         if (empty($ulo)) {
@@ -1569,7 +1569,7 @@ class KoordinatorController extends Controller
         $uloSave->status_ulo = 901;
         $uloSave->save();
 
-        
+
         DB::commit();
 
         //penanggungjawab dan kirim email
@@ -1578,7 +1578,7 @@ class KoordinatorController extends Controller
         $evaluator_email = $evaluator['email'] ? $evaluator['email'] : '';
         $evaluator_nama = $evaluator['nama'] ? $evaluator['nama'] : '';
         $jabatan = DB::table('tb_mst_jobposition')->where('id', $evaluator['id_mst_jobposition'])->first();
-        // dd($jabatan);   
+        // dd($jabatan);
 
         $email_data = array();
         $email_data_evaluator = array();
@@ -1881,19 +1881,19 @@ class KoordinatorController extends Controller
         //     $data['konfigurasi_sistem'][0]['sertifikasi_alat'] = $path_konfigurasi_sistem;
         // }
         /*
-             * 
+             *
              * Disable update daftar perangket
-             * 
-             
+             *
+
             if ($status_badan_hukum=='TELSUS') {
                 $daftar_perangkat_save = json_encode($data['daftar_perangkat_telsus']);
-    
+
                 //update konfigurasi teknis
                 $update_daftar_perangkat = DB::table('tb_trx_persyaratan')->select('*')->where('id_map_listpersyaratan', '=', $id_daftar_perangkat)->where('id_trx_izin', '=', $id)->update([
                 'filled_document' => $daftar_perangkat_save]);
             } else {
                 $daftar_perangkat_save = json_encode($data['daftar_perangkat']);
-    
+
                 //update konfigurasi teknis
                 $update_daftar_perangkat = DB::table('tb_trx_persyaratan')->select('*')->where('id_map_listpersyaratan', '=', $id_daftar_perangkat)->where('id_trx_izin', '=', $id)->update([
                 'filled_document' => $daftar_perangkat_save
@@ -2059,7 +2059,7 @@ class KoordinatorController extends Controller
         $log = $log->toArray();
         // dd($log);
 
-        //getcountiizin 
+        //getcountiizin
         // $countdisposisi = IzinHelper::countPenomoran(20,$id_departemen_user);
         // $countevaluasi = IzinHelper::countPenomoran(903,$id_departemen_user);
         // dd($penomoran);
@@ -2299,7 +2299,7 @@ class KoordinatorController extends Controller
 
         //end mengirim email ke evaluator
         $kirim_email2 = $email->kirim_email2($user, $email_jenis, $penomoran, $departemen, $catatan_hasil_evaluasi, $nama2, $nibs, $is_koreksi, $jabatan);
-        
+
         return Redirect::route('admin.koordinator');
     }
 
@@ -2347,7 +2347,7 @@ class KoordinatorController extends Controller
         )
             ->get();
         // dd($vw_kodeakses_additional_nonarray);
-        
+
         if (isset($nib)) {
             $detailNib = $common->get_detail_nib($nib);
         } else {
@@ -2371,7 +2371,7 @@ class KoordinatorController extends Controller
                 'penomoran_bloknomor' => $penomoran_bloknomor,
                 'vw_kodeakses_additional' => $vw_kodeakses_additional, 'vw_kodeakses_additional_nonarray' =>
                 $vw_kodeakses_additional_nonarray, 'vw_kodeakses_additional_count' =>
-                $vw_kodeakses_additional_count, 'note' => $note, 'penomoran_ulang' => $penomoran_ulang 
+                $vw_kodeakses_additional_count, 'note' => $note, 'penomoran_ulang' => $penomoran_ulang
             ]);
     }
 
@@ -2433,7 +2433,7 @@ class KoordinatorController extends Controller
 
         if ($data['status_sk'] == 0) { //jika ditolak
             $penomoranToSave->status_permohonan = 90;
-            
+
             $penomoran_alokasi =
                 DB::table('tb_trx_kode_akses_alokasi')->select('*')->where(
                     'id',
@@ -2796,7 +2796,7 @@ class KoordinatorController extends Controller
 
     // public function penomorantambahan(){
     //     return view('layouts.frontend.penomoran.penomoran-tambahan');
-    // }    
+    // }
 
     public function disposisiPenyesuaian($id, Request $request)
     {
@@ -2925,7 +2925,7 @@ class KoordinatorController extends Controller
             ->first();
         // // dd($ulo);
 
-        // // dd($izin);  
+        // // dd($izin);
         // // $status_checklist = $izin->status_checklist;
 
         // if (empty($ulo)) {
@@ -2966,7 +2966,7 @@ class KoordinatorController extends Controller
             $evaluator_email = $evaluator['email'] ? $evaluator['email'] : '';
             $evaluator_nama = $evaluator['nama'] ? $evaluator['nama'] : '';
             $jabatan = DB::table('tb_mst_jobposition')->where('id', $evaluator['id_mst_jobposition'])->first();
-            // dd($jabatan);   
+            // dd($jabatan);
 
             $email_data = array();
             $email_data_evaluator = array();

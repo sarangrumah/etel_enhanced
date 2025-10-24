@@ -54,7 +54,7 @@ class DirekturController extends Controller
     {
         // return Redirect::route('admin.direktur.ulo');
         $log= new LogHelper();
-        $log->createLog('Akses Dashboard');
+        $log->createLog('akses', 'Akses Dashboard');
         $date_reformat = new DateHelper();
         $paginate = array();
         $common = new CommonHelper();
@@ -511,7 +511,7 @@ class DirekturController extends Controller
         //     'updated_by' => $userbo,
         //     'updated_date' => Carbon::now()->format('Y-m-d'),
 
-        // ]); 
+        // ]);
 
         // $insert->save();
 
@@ -1158,7 +1158,7 @@ class DirekturController extends Controller
         $penomoranlog = Penomoranlog::where('id_izin', '=', $id)
             // ->where('id_kode_akses','=',$id_kodeakses)
             ->with('KodeIzin')->get()->toArray();
-        
+
         $penomoran_ulang = DB::table('tb_trx_penomoran_penetapanulang')->select('tb_trx_penomoran_penetapanulang.*','vw_detail_loc.detail_loc')
         ->leftjoin('vw_detail_loc','vw_detail_loc.id','=','tb_trx_penomoran_penetapanulang.id_mst_kelurahan')
         ->where('id_izin','=',$id)->first();
@@ -1170,7 +1170,7 @@ class DirekturController extends Controller
             'penomoran_bloknomor' => $penomoran_bloknomor, 'vw_kodeakses_additional' => $vw_kodeakses_additional,
             'vw_kodeakses_additional_nonarray' =>
             $vw_kodeakses_additional_nonarray, 'vw_kodeakses_additional_count' => $vw_kodeakses_additional_count,
-            'note' => $note, 'penomoran_ulang' => $penomoran_ulang 
+            'note' => $note, 'penomoran_ulang' => $penomoran_ulang
         ]);
     }
 

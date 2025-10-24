@@ -45,7 +45,7 @@ class SubkoordinatorController extends Controller
     {
         $date_reformat = new DateHelper();
         $log= new LogHelper();
-        $log->createLog('Akses Dashboard');
+        $log->createLog('akses', 'Akses Dashboard');
         $id_departemen_user = Session::get('id_departemen');
         if ($id_departemen_user == 1) {
             return Redirect::route('admin.subkoordinator.jasa');
@@ -74,7 +74,7 @@ class SubkoordinatorController extends Controller
         });
         $izin->take($limit_db)->distinct('id_izin');
 
-        //getcountiizin 
+        //getcountiizin
         // $countdisposisi = IzinHelper::countIzin($status_checklist,$id_departemen_user);
         $countdisposisi = $izin->count();
 
@@ -104,7 +104,7 @@ class SubkoordinatorController extends Controller
         });
         $izin->take($limit_db)->distinct('id_izin');
 
-        //getcountiizin 
+        //getcountiizin
         // $countdisposisi = IzinHelper::countIzin($status_checklist,$id_departemen_user);
         $countdisposisi = $izin->count();
 
@@ -134,7 +134,7 @@ class SubkoordinatorController extends Controller
             ->take($limit_db)
             ->distinct('id_izin');
         // dd($izin);
-        //getcountiizin 
+        //getcountiizin
         // $countdisposisi = IzinHelper::countIzin($status_checklist,$id_departemen_user);
         $countdisposisi = $izin->count();
 
@@ -633,7 +633,7 @@ class SubkoordinatorController extends Controller
             // ->take($limit_db)
             ->distinct('id_izin');
         // dd($izin);
-        //getcountiizin 
+        //getcountiizin
         // $countdisposisi = IzinHelper::countIzin($status_checklist,$id_departemen_user);
         $countdisposisi = $izin->count();
 
@@ -965,19 +965,19 @@ class SubkoordinatorController extends Controller
         //     $data['konfigurasi_sistem'][0]['sertifikasi_alat'] = $path_konfigurasi_sistem;
         // }
         /**
-         * 
+         *
          * Disable update daftar perangket
-         * 
-             
+         *
+
             if ($status_badan_hukum=='TELSUS') {
                 $daftar_perangkat_save = json_encode($data['daftar_perangkat_telsus']);
-    
+
                 //update konfigurasi teknis
                 $update_daftar_perangkat = DB::table('tb_trx_persyaratan')->select('*')->where('id_map_listpersyaratan', '=', $id_daftar_perangkat)->where('id_trx_izin', '=', $id)->update([
                 'filled_document' => $daftar_perangkat_save]);
             } else {
                 $daftar_perangkat_save = json_encode($data['daftar_perangkat']);
-    
+
                 //update konfigurasi teknis
                 $update_daftar_perangkat = DB::table('tb_trx_persyaratan')->select('*')->where('id_map_listpersyaratan', '=', $id_daftar_perangkat)->where('id_trx_izin', '=', $id)->update([
                 'filled_document' => $daftar_perangkat_save
@@ -1201,7 +1201,7 @@ class SubkoordinatorController extends Controller
         $paginate = $penomoran;
         $penomoran = $penomoran->toArray();
 
-        //getcountiizin 
+        //getcountiizin
         // $countdisposisi = IzinHelper::countPenomoran($status_penomoran,$id_departemen_user);
         $jenis_izin = 'Penomoran';
         $log = DB::table('vw_penomoran_all as t')->select('t.*')
@@ -1278,7 +1278,7 @@ class SubkoordinatorController extends Controller
         //     $detailNib->toArray();
         // }
 
-        
+
         $penomoran_ulang = DB::table('tb_trx_penomoran_penetapanulang')->select('tb_trx_penomoran_penetapanulang.*','vw_detail_loc.detail_loc')
         ->leftjoin('vw_detail_loc','vw_detail_loc.id','=','tb_trx_penomoran_penetapanulang.id_mst_kelurahan')
         ->where('id_izin','=',$id)->first();
@@ -1299,7 +1299,7 @@ class SubkoordinatorController extends Controller
                 'date_reformat' => $date_reformat, 'id' => $id, 'penomoran' => $penomoran, 'detailnib' => $detailNib, 'penanggungjawab' => $penanggungjawab, 'penomoranlog' => $penomoranlog, 'penomoran_bloknomor' => $penomoran_bloknomor,
                 'vw_kodeakses_additional' => $vw_kodeakses_additional, 'vw_kodeakses_additional_nonarray' =>
                 $vw_kodeakses_additional_nonarray, 'vw_kodeakses_additional_count' => $vw_kodeakses_additional_count, 'note'
-                => $note, 'penomoran_ulang' => $penomoran_ulang 
+                => $note, 'penomoran_ulang' => $penomoran_ulang
             ]);
     }
     public function pencabutanPenomoran($id_izin)
@@ -1516,7 +1516,7 @@ class SubkoordinatorController extends Controller
         DB::beginTransaction();
         // try {
 
-        
+
 
         if ($file1 = $request->file('berkas_tambahan')) {
                 // $date_reformat = new DateHelper();
@@ -1529,7 +1529,7 @@ class SubkoordinatorController extends Controller
             }
         if ($data['status_sk'] == 0) { //jika ditolak
             $penomoranToSave->status_permohonan = 90;
-            
+
             $penomoran_alokasi =
                 DB::table('tb_trx_kode_akses_alokasi')->select('*')->where(
                     'id',
